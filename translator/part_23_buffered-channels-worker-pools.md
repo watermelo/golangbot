@@ -247,7 +247,7 @@ var jobs = make(chan Job, 10)
 var results = make(chan Result, 10)
 ```
 
-工作```Goroutines```在任务缓冲```channel```上侦听新任务。一旦任务完成，把结果写入结果缓冲```channel```。
+```worker Goroutines```在任务缓冲```channel```上侦听新任务。一旦任务完成，把结果写入结果缓冲```channel```。
 
 ```digits```函数执行查找整数的各个数字之和并返回它的。我们为此函数添加 2 秒的休眠，以模拟此函数计算结果需要一些时间的场景。
 ```golang
@@ -264,7 +264,7 @@ func digits(number int) int {
 }
 ```
 
-接下来将编写一个创建工作```Goroutine```的函数。
+接下来将编写一个创建```worker Goroutine```的函数。
 ```golang
 func worker(wg *sync.WaitGroup) {
     for job := range jobs {
