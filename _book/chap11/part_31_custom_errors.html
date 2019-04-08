@@ -1,0 +1,1261 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第31节: 自定义错误 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="part_32_panic_and_recover.html" />
+    
+    
+    <link rel="prev" href="part_30_error_handling.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章：介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chap1/part_1_introduction_and_installation.html">
+            
+                <a href="../chap1/part_1_introduction_and_installation.html">
+            
+                    
+                    第1节：介绍和安装 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chap1/part_2_hello_world.html">
+            
+                <a href="../chap1/part_2_hello_world.html">
+            
+                    
+                    第2节：Hello, World x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第二章：变量、类型、常量
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chap2/part_3_variables.html">
+            
+                <a href="../chap2/part_3_variables.html">
+            
+                    
+                    第3节：变量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chap2/part_4_types.html">
+            
+                <a href="../chap2/part_4_types.html">
+            
+                    
+                    第4节：类型 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chap2/part_constants.html">
+            
+                <a href="../chap2/part_constants.html">
+            
+                    
+                    第5节：常量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第三章：函数和包
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chap3/part_6_functions.html">
+            
+                <a href="../chap3/part_6_functions.html">
+            
+                    
+                    第6节：函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chap3/part_7_packages.html">
+            
+                <a href="../chap3/part_7_packages.html">
+            
+                    
+                    第7节：包 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第四章：条件语句和循环
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chap4/part_8_if_else.html">
+            
+                <a href="../chap4/part_8_if_else.html">
+            
+                    
+                    第8节：if else 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chap4/part_9_loops.html">
+            
+                <a href="../chap4/part_9_loops.html">
+            
+                    
+                    第9节：循环 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chap4/part_10_switch.html">
+            
+                <a href="../chap4/part_10_switch.html">
+            
+                    
+                    第10节：switch 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第五章：数组、切片、可变函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chap5/part_11_arrays_and_slices.html">
+            
+                <a href="../chap5/part_11_arrays_and_slices.html">
+            
+                    
+                    第11节：数组和切片 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chap5/part_12_variadic_functions.html">
+            
+                <a href="../chap5/part_12_variadic_functions.html">
+            
+                    
+                    第12节：可变函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第六章：更多类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chap6/part_13_maps.html">
+            
+                <a href="../chap6/part_13_maps.html">
+            
+                    
+                    第13节: maps x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chap6/part_14_strings.html">
+            
+                <a href="../chap6/part_14_strings.html">
+            
+                    
+                    第14节：字符串 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第七章：指针、结构、方法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chap7/part_15_pointers.html">
+            
+                <a href="../chap7/part_15_pointers.html">
+            
+                    
+                    第15节: 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chap7/part_16_structs.html">
+            
+                <a href="../chap7/part_16_structs.html">
+            
+                    
+                    第16节：结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chap7/part_17_methods.html">
+            
+                <a href="../chap7/part_17_methods.html">
+            
+                    
+                    第17节：方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第八章：接口
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chap8/part_18_interfaces_1.html">
+            
+                <a href="../chap8/part_18_interfaces_1.html">
+            
+                    
+                    第18节: 接口-i x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chap8/part_19_interfaces_2.html">
+            
+                <a href="../chap8/part_19_interfaces_2.html">
+            
+                    
+                    第19节：接口-ii x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    第九章：并发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chap9/part_20_introduction_to_concurrency.html">
+            
+                <a href="../chap9/part_20_introduction_to_concurrency.html">
+            
+                    
+                    第20节: 并发介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chap9/part_21_goroutines.html">
+            
+                <a href="../chap9/part_21_goroutines.html">
+            
+                    
+                    第21节：协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chap9/part_22_channels.html">
+            
+                <a href="../chap9/part_22_channels.html">
+            
+                    
+                    第22节: 通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chap9/part_23_buffered_channels_worker_pools.html">
+            
+                <a href="../chap9/part_23_buffered_channels_worker_pools.html">
+            
+                    
+                    第23节：缓冲通道和协程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../chap9/part_24_select.html">
+            
+                <a href="../chap9/part_24_select.html">
+            
+                    
+                    第24节: select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../chap9/part_25_mutex.html">
+            
+                <a href="../chap9/part_25_mutex.html">
+            
+                    
+                    第25节: 互斥锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    第十章：面向对象编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../chap10/part_26_structs_instead_of_classes.html">
+            
+                <a href="../chap10/part_26_structs_instead_of_classes.html">
+            
+                    
+                    第26节: 结构替代类 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../chap10/part_27_inheritance.html">
+            
+                <a href="../chap10/part_27_inheritance.html">
+            
+                    
+                    第27节：组合替代继承 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../chap10/part_28_polymorphism.html">
+            
+                <a href="../chap10/part_28_polymorphism.html">
+            
+                    
+                    第28节: 多态 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    第十一章：延迟函数和错误处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="part_29_defer.html">
+            
+                <a href="part_29_defer.html">
+            
+                    
+                    第29节: defer函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="part_30_error_handling.html">
+            
+                <a href="part_30_error_handling.html">
+            
+                    
+                    第30节：错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.3" data-path="part_31_custom_errors.html">
+            
+                <a href="part_31_custom_errors.html">
+            
+                    
+                    第31节: 自定义错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="part_32_panic_and_recover.html">
+            
+                <a href="part_32_panic_and_recover.html">
+            
+                    
+                    第32节: panic和recover
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    第十二章：头等函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../chap12/part_33_first_class_functions.html">
+            
+                <a href="../chap12/part_33_first_class_functions.html">
+            
+                    
+                    第33节: 头等函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    第十三章：反射
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../chap13/part_34_reflection.html">
+            
+                <a href="../chap13/part_34_reflection.html">
+            
+                    
+                    第34节: 反射 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    第十四章：文件处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="part_35_read_files.html">
+            
+                <a href="part_35_read_files.html">
+            
+                    
+                    第35节: 读文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="part_36_write_files.html">
+            
+                <a href="part_36_write_files.html">
+            
+                    
+                    第36节: 写文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第31节: 自定义错误</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<ul>
+<li>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://golangbot.com/custom-errors/" target="_blank">Part 31: Custom Errors</a></li>
+<li>&#x539F;&#x6587;&#x4F5C;&#x8005;&#xFF1A;<a href="https://golangbot.com/about/" target="_blank">Naveen R</a></li>
+<li>&#x8BD1;&#x8005;&#xFF1A;&#x5494;&#x53FD;&#x5494;&#x53FD;
+&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;&#x3002;</li>
+</ul>
+</blockquote>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x4E86;&#x5728; Go &#x8BED;&#x8A00;&#x4E2D;&#x7684;<code>error</code>&#x662F;&#x5982;&#x4F55;&#x8868;&#x793A;&#x7684;&#x4EE5;&#x53CA;&#x600E;&#x4E48;&#x7528;&#x6807;&#x51C6;&#x5E93;&#x5904;&#x7406;<code>error</code>&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x5B66;&#x4E60;&#x4E86;&#x5982;&#x4F55;&#x4ECE;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x63D0;&#x53D6;&#x66F4;&#x591A;&#x7684;<code>error</code>&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x672C;&#x6559;&#x7A0B;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x51FD;&#x6570;&#x548C;&#x5305;&#x4E2D;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;<code>error</code>&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5E93;&#x4F7F;&#x7528;&#x7684;&#x76F8;&#x540C;&#x6280;&#x672F;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;new&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;error">&#x4F7F;&#x7528;<code>New</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;<code>error</code></h2>
+<p>&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;<code>error</code>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>errors</code>&#x5305;&#x7684;<a href="https://golang.org/pkg/errors/#New" target="_blank">New</a>&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>New</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;<code>error</code>&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x63D0;&#x4F9B;&#x4E86;<a href="https://golang.org/src/errors/errors.go?s=293:320#L1" target="_blank">errors &#x5305;</a>&#x4E2D;<code>New</code>&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-comment">// Package errors implements functions to manipulate errors.</span>
+  <span class="hljs-keyword">package</span> errors
+
+  <span class="hljs-comment">// New returns an error that formats as the given text.</span>
+  <span class="hljs-keyword">func</span> New(text <span class="hljs-keyword">string</span>) error {
+      <span class="hljs-keyword">return</span> &amp;errorString{text}
+  }
+
+  <span class="hljs-comment">// errorString is a trivial implementation of error.</span>
+  <span class="hljs-keyword">type</span> errorString <span class="hljs-keyword">struct</span> {
+      s <span class="hljs-keyword">string</span>
+  }
+
+  <span class="hljs-keyword">func</span> (e *errorString) Error() <span class="hljs-keyword">string</span> {
+      <span class="hljs-keyword">return</span> e.s
+  }
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002;<code>errorString</code>&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;<code>s</code>&#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x3002;<code>error</code>&#x63A5;&#x53E3;&#x7684;<code>Error</code>&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x7B2C; 14 &#x884C;&#x4F7F;&#x7528;<code>errorString</code>&#x6307;&#x9488;&#x63A5;&#x6536;&#x5668;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x7B2C; 5 &#x884C;&#x7684;<code>New</code>&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>errorString</code>&#x7C7B;&#x578B;&#x7684;&#x503C;&#x5E76;&#x8FD4;&#x56DE;&#x5B83;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>error</code>&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E86;<code>New</code>&#x51FD;&#x6570;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;<code>error</code>&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5706;&#x7684;&#x9762;&#x79EF;&#x7684;&#x7B80;&#x5355;&#x7A0B;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x534A;&#x5F84;&#x4E3A;&#x8D1F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>error</code>&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;errors&quot;</span>
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;math&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> circleArea(radius <span class="hljs-keyword">float64</span>) (<span class="hljs-keyword">float64</span>, error) {
+    <span class="hljs-keyword">if</span> radius &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, errors.New(<span class="hljs-string">&quot;Area calculation failed, radius is less than zero&quot;</span>)
+    }
+    <span class="hljs-keyword">return</span> math.Pi * radius * radius, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-keyword">func</span> main() {
+    radius := <span class="hljs-number">-20.0</span>
+    area, err := circleArea(radius)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        fmt.Println(err)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Printf(<span class="hljs-string">&quot;Area of circle %0.2f&quot;</span>, area)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/7jCd9RxzQLl" target="_blank">Run in playground</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 10 &#x884C;&#x68C0;&#x67E5;&#x534A;&#x5F84;&#x662F;&#x5426;&#x5C0F;&#x4E8E;&#x96F6;&#x3002;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; 0 &#x4EE5;&#x53CA;&#x76F8;&#x5E94;&#x7684;<code>error</code>&#x5185;&#x5BB9;&#x3002;&#x5728;&#x7B2C; 13 &#x884C;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x534A;&#x5F84;&#x5927;&#x4E8E; 0&#xFF0C;&#x5219;&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x5E76;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;<code>nil</code>&#x7684;<code>error</code>&#x3002;</p>
+<p>&#x5728; main &#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 19 &#x884C;&#x68C0;&#x67E5;<code>error</code>&#x662F;&#x5426;&#x4E3A;<code>nil</code>&#x3002;&#x5982;&#x679C;&#x4E0D;&#x662F;<code>nil</code>&#xFF0C;&#x5C31;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x5E76;&#x8FD4;&#x56DE;&#xFF0C;&#x5426;&#x5219;&#x6253;&#x5370;&#x533A;&#x57DF;&#x7684;&#x9762;&#x79EF;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x534A;&#x5F84;&#x5C0F;&#x4E8E;&#x96F6;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">Area calculation failed, radius is less than zero
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;errorf&#x4E3A;error&#x589E;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;">&#x4F7F;&#x7528;<code>Errorf</code>&#x4E3A;<code>error</code>&#x589E;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;</h2>
+<p>&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6548;&#x679C;&#x8FD8;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x60F3;&#x6253;&#x5370;&#x786E;&#x5207;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5C31;&#x6709;&#x70B9;&#x5403;&#x529B;&#x4E86;&#x3002;&#x8FD9;&#x79CD;&#x573A;&#x666F;<code>fmt</code>&#x5305;&#x7684;<code>Errorf</code>&#x51FD;&#x6570;&#x5C31;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x4E86;&#x3002;&#x6B64;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x5316;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;<code>error</code>&#x7684;&#x503C;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x8BD5;&#x8BD5;<code>Errorf</code>&#x51FD;&#x6570;&#xFF0C;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;math&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> circleArea(radius <span class="hljs-keyword">float64</span>) (<span class="hljs-keyword">float64</span>, error) {
+    <span class="hljs-keyword">if</span> radius &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, fmt.Errorf(<span class="hljs-string">&quot;Area calculation failed, radius %0.2f is less than zero&quot;</span>, radius)
+    }
+    <span class="hljs-keyword">return</span> math.Pi * radius * radius, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-keyword">func</span> main() {
+    radius := <span class="hljs-number">-20.0</span>
+    area, err := circleArea(radius)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        fmt.Println(err)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Printf(<span class="hljs-string">&quot;Area of circle %0.2f&quot;</span>, area)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/0Nciss3ojbw" target="_blank">Run in playground</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x7B2C; 10 &#x884C;&#x4F7F;&#x7528;&#x4E86;<code>Errorf</code>&#xFF0C; &#x6253;&#x5370;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x7684;&#x5B9E;&#x9645;&#x534A;&#x5F84;&#x503C;&#xFF0C;&#x8FD0;&#x884C;&#x6B64;&#x7A0B;&#x5E8F;&#x5C06;&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">Area calculation failed, radius -20.00 is less than zero
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x548C;&#x5B57;&#x6BB5;&#x63D0;&#x4F9B;&#x6709;&#x5173;error&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;">&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x548C;&#x5B57;&#x6BB5;&#x63D0;&#x4F9B;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;</h2>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B9E;&#x73B0;&#x9519;&#x8BEF;&#x63A5;&#x53E3;&#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;<code>error</code>&#x3002;&#x8FD9;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x89E3;&#x6790;<code>Area calculation failed, radius -20.00 is less than zero</code>&#x3002;&#x8FD9;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x5408;&#x9002;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x63CF;&#x8FF0;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x5C31;&#x5F97;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x524D;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x6240;&#x63D0;&#x5230;&#x7684;&#x201C;&#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4ECE;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x6BB5;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x201D;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x5B57;&#x6BB5;&#x6765;&#x63D0;&#x4F9B;<code>err</code>&#x548C;<code>radius</code>&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;<code>error</code>&#x63A5;&#x53E3;&#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5176;&#x5B57;&#x6BB5;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x6765;&#x8868;&#x793A;<code>error</code>&#x3002;&#x7C7B;&#x578B;&#x7684;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#x662F;<code>Error</code>&#x7ED3;&#x5C3E;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C06;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x547D;&#x540D;&#x4E3A;<code>areaError</code></p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> areaError <span class="hljs-keyword">struct</span> {
+    err    <span class="hljs-keyword">string</span>
+    radius <span class="hljs-keyword">float64</span>
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;<code>radius</code>&#xFF0C;&#x5B83;&#x5B58;&#x50A8;&#x4E86;&#x8D1F;&#x8D23;&#x8BE5;<code>error</code>&#x7684;&#x534A;&#x5F84;&#x503C;&#xFF0C;&#x800C;<code>err</code>&#x5B57;&#x6BB5;&#x5219;&#x5B58;&#x50A8;&#x4E86;&#x5B9E;&#x9645;&#x7684;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x4E0B;&#x4E00;&#x6B65;&#x662F;&#x5B9E;&#x73B0;<code>error</code>&#x63A5;&#x53E3;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> (e *areaError) Error() <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> fmt.Sprintf(<span class="hljs-string">&quot;radius %0.2f: %s&quot;</span>, e.radius, e.err)
+}
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x63A5;&#x6536;&#x8005;<code>* areaError</code>&#x5B9E;&#x73B0;&#x9519;&#x8BEF;&#x63A5;&#x53E3;&#x7684;<code>Error</code>&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x6253;&#x5370;<code>radius</code>&#x548C;<code>err</code>&#x63CF;&#x8FF0;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7F16;&#x5199;<code>main</code>&#x51FD;&#x6570;&#x548C;<code>circleArea</code>&#x51FD;&#x6570;&#x6765;&#x5B8C;&#x6210;&#x7A0B;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;math&quot;</span>
+)
+
+<span class="hljs-keyword">type</span> areaError <span class="hljs-keyword">struct</span> {
+    err    <span class="hljs-keyword">string</span>
+    radius <span class="hljs-keyword">float64</span>
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) Error() <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> fmt.Sprintf(<span class="hljs-string">&quot;radius %0.2f: %s&quot;</span>, e.radius, e.err)
+}
+
+<span class="hljs-keyword">func</span> circleArea(radius <span class="hljs-keyword">float64</span>) (<span class="hljs-keyword">float64</span>, error) {
+    <span class="hljs-keyword">if</span> radius &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, &amp;areaError{<span class="hljs-string">&quot;radius is negative&quot;</span>, radius}
+    }
+    <span class="hljs-keyword">return</span> math.Pi * radius * radius, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-keyword">func</span> main() {
+    radius := <span class="hljs-number">-20.0</span>
+    area, err := circleArea(radius)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> err, ok := err.(*areaError); ok {
+            fmt.Printf(<span class="hljs-string">&quot;Radius %0.2f is less than zero&quot;</span>, err.radius)
+            <span class="hljs-keyword">return</span>
+        }
+        fmt.Println(err)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Printf(<span class="hljs-string">&quot;Area of rectangle1 %0.2f&quot;</span>, area)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/G38vOhidIoy" target="_blank">Run in playgroud</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x7B2C; 17 &#x884C;&#x7684;<code>circleArea</code>&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5706;&#x7684;&#x9762;&#x79EF;&#x3002;&#x6B64;&#x51FD;&#x6570;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x534A;&#x5F84;&#x662F;&#x5426;&#x5C0F;&#x4E8E;&#x96F6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x8BE5;&#x9519;&#x8BEF;&#x7684;&#x534A;&#x5F84;&#x548C;&#x76F8;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#x63CF;&#x8FF0;&#x53BB;&#x521B;&#x5EFA;<code>areaError</code>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x7B2C; 19 &#x884C;&#x8FD4;&#x56DE;<code>areaError</code>&#x7684;&#x5730;&#x5740;&#x548C;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;<code>error</code>&#x4FE1;&#x606F;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>error</code>&#x7ED3;&#x6784;&#x7684;&#x5B57;&#x6BB5;&#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x534A;&#x5F84;&#x4E0D;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x5219;&#x6B64;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x5E76;&#x8FD4;&#x56DE;&#x9762;&#x79EF;&#x548C;<code>nil</code></p>
+<p>&#x5728;&#x7B2C; 26 &#x884C;&#x7684;<code>main</code>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8BD5;&#x56FE;&#x8BA1;&#x7B97;&#x534A;&#x5F84;&#x4E3A;-20 &#x7684;&#x5706;&#x9762;&#x79EF;&#x3002;&#x7531;&#x4E8E;&#x534A;&#x5F84;&#x5C0F;&#x4E8E;&#x96F6;&#xFF0C;&#x56E0;&#x6B64;&#x5C06;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5728;&#x7B2C; 27 &#x884C;&#x68C0;&#x67E5;<code>err</code>&#x662F;&#x5426;&#x4E3A;<code>nil</code>&#xFF0C;&#x5E76;&#x5728;&#x4E0B;&#x4E00;&#x884C;&#x4E2D;&#x65AD;&#x8A00;<code>err</code>&#x662F;<code>* areaError</code>&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;&#x662F;<code>* areaError&#x7C7B;&#x578B;</code>&#xFF0C;&#x6211;&#x4EEC;&#x5728; 29 &#x884C;&#x4F7F;&#x7528;<code>err.radius</code>&#x83B7;&#x53D6;&#x9020;&#x6210;<code>error</code>&#x7684;<code>radius</code>&#xFF0C;&#x7136;&#x540E;&#x6253;&#x5370;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#x5E76;&#x4ECE;&#x7A0B;&#x5E8F;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">Radius -20.00 is less than zero
+</code></pre>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E0A;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x6709;&#x5173;error&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;">&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;</h2>
+<p>&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x77E9;&#x5F62;&#x533A;&#x57DF;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x5982;&#x679C;&#x957F;&#x5EA6;&#x6216;&#x5BBD;&#x5EA6;&#x5C0F;&#x4E8E; 0&#xFF0C;&#x8BE5;&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8868;&#x793A;<code>error</code>&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> areaError <span class="hljs-keyword">struct</span> {
+    err    <span class="hljs-keyword">string</span> <span class="hljs-comment">//error description</span>
+    length <span class="hljs-keyword">float64</span> <span class="hljs-comment">//length which caused the error</span>
+    width  <span class="hljs-keyword">float64</span> <span class="hljs-comment">//width which caused the error</span>
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x9519;&#x8BEF;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5305;&#x542B;&#x9519;&#x8BEF;&#x63CF;&#x8FF0;&#x5B57;&#x6BB5;<code>err</code>&#x4EE5;&#x53CA;&#x957F;&#x5EA6;<code>length</code>&#x548C;&#x5BBD;&#x5EA6;<code>width</code>&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x597D;&#x4E86;<code>error</code>&#x7C7B;&#x578B;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;<code>error</code>&#x63A5;&#x53E3;&#x5E76;&#x5728;&#x7C7B;&#x578B;&#x4E0A;&#x6DFB;&#x52A0;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#x4EE5;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> (e *areaError) Error() <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> e.err
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) lengthNegative() <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> e.length &lt; <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) widthNegative() <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> e.width &lt; <span class="hljs-number">0</span>
+}
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;<code>Error</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x7684;&#x63CF;&#x8FF0;<code>e.err</code>&#x3002;&#x5F53;<code>length</code>&#x5C0F;&#x4E8E; 0 &#x65F6;&#xFF0C;<code>lengthNegative</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;<code>true</code>&#xFF0C;&#x800C;&#x5F53;<code>width</code>&#x5C0F;&#x4E8E; 0 &#x65F6;&#xFF0C;<code>widthNegative</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;<code>true</code>&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x4E86;&#x6709;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4EEC;&#x8868;&#x793A;&#x533A;&#x57DF;&#x8BA1;&#x7B97;&#x662F;&#x5426;&#x56E0;&#x4E3A;&#x957F;&#x5EA6;&#x4E3A;&#x8D1F;&#x6216;&#x5BBD;&#x5EA6;&#x4E3A;&#x8D1F;&#x800C;&#x5931;&#x8D25;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>error</code>&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x4E0B;&#x4E00;&#x6B65;&#x662F;&#x5B9E;&#x73B0;&#x9762;&#x79EF;&#x8BA1;&#x7B97;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> rectArea(length, width <span class="hljs-keyword">float64</span>) (<span class="hljs-keyword">float64</span>, error) {
+    err := <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> length &lt; <span class="hljs-number">0</span> {
+        err += <span class="hljs-string">&quot;length is less than zero&quot;</span>
+    }
+    <span class="hljs-keyword">if</span> width &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">if</span> err == <span class="hljs-string">&quot;&quot;</span> {
+            err = <span class="hljs-string">&quot;width is less than zero&quot;</span>
+        } <span class="hljs-keyword">else</span> {
+            err += <span class="hljs-string">&quot;, width is less than zero&quot;</span>
+        }
+    }
+    <span class="hljs-keyword">if</span> err != <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, &amp;areaError{err, length, width}
+    }
+    <span class="hljs-keyword">return</span> length * width, <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;<code>rectArea</code>&#x51FD;&#x6570;&#x68C0;&#x67E5;&#x957F;&#x5EA6;&#x6216;&#x5BBD;&#x5EA6;&#x662F;&#x5426;&#x5C0F;&#x4E8E; 0&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; 0 &#x548C;<code>error</code>&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x77E9;&#x5F62;&#x9762;&#x79EF;&#x548C;<code>nil</code>&#x3002;
+&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x521B;&#x5EFA;<code>main</code>&#x51FD;&#x6570;&#x6765;&#x5B8C;&#x6210;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> main() {
+    length, width := <span class="hljs-number">-5.0</span>, <span class="hljs-number">-9.0</span>
+    area, err := rectArea(length, width)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> err, ok := err.(*areaError); ok {
+            <span class="hljs-keyword">if</span> err.lengthNegative() {
+                fmt.Printf(<span class="hljs-string">&quot;error: length %0.2f is less than zero\n&quot;</span>, err.length)
+
+            }
+            <span class="hljs-keyword">if</span> err.widthNegative() {
+                fmt.Printf(<span class="hljs-string">&quot;error: width %0.2f is less than zero\n&quot;</span>, err.width)
+
+            }
+            <span class="hljs-keyword">return</span>
+        }
+        fmt.Println(err)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Println(<span class="hljs-string">&quot;area of rect&quot;</span>, area)
+}
+</code></pre>
+<p>&#x5728;<code>main</code>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x68C0;&#x67E5;<code>err</code>&#x662F;&#x5426;&#x4E3A;<code>nil</code>&#x3002; &#x5982;&#x679C;&#x5B83;&#x4E0D;&#x662F;<code>nil</code>&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4E0B;&#x4E00;&#x884C;&#x65AD;&#x8A00;<code>* areaError</code>&#x3002;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>lengthNegative</code>&#x548C;<code>widthNegative</code>&#x65B9;&#x6CD5;&#xFF0C;&#x68C0;&#x67E5;&#x9519;&#x8BEF;&#x662F;&#x5426;&#x662F;&#x56E0;&#x4E3A;&#x957F;&#x5EA6;&#x4E3A;&#x8D1F;&#x6216;&#x5BBD;&#x5EA6;&#x4E3A;&#x8D1F;&#x3002;&#x6211;&#x4EEC;&#x6253;&#x5370;&#x76F8;&#x5E94;&#x7684;<code>error</code>&#x5185;&#x5BB9;&#x5E76;&#x4ECE;&#x7A0B;&#x5E8F;&#x8FD4;&#x56DE;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x5C06;&#x6253;&#x5370;&#x77E9;&#x5F62;&#x9762;&#x79EF;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x8D34;&#x51FA;&#x5B8C;&#x6574;&#x7684;&#x7A0B;&#x5E8F;&#x4F9B;&#x53C2;&#x8003;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">type</span> areaError <span class="hljs-keyword">struct</span> {
+    err    <span class="hljs-keyword">string</span>  <span class="hljs-comment">//error description</span>
+    length <span class="hljs-keyword">float64</span> <span class="hljs-comment">//length which caused the error</span>
+    width  <span class="hljs-keyword">float64</span> <span class="hljs-comment">//width which caused the error</span>
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) Error() <span class="hljs-keyword">string</span> {
+    <span class="hljs-keyword">return</span> e.err
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) lengthNegative() <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> e.length &lt; <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">func</span> (e *areaError) widthNegative() <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> e.width &lt; <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">func</span> rectArea(length, width <span class="hljs-keyword">float64</span>) (<span class="hljs-keyword">float64</span>, error) {
+    err := <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> length &lt; <span class="hljs-number">0</span> {
+        err += <span class="hljs-string">&quot;length is less than zero&quot;</span>
+    }
+    <span class="hljs-keyword">if</span> width &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">if</span> err == <span class="hljs-string">&quot;&quot;</span> {
+            err = <span class="hljs-string">&quot;width is less than zero&quot;</span>
+        } <span class="hljs-keyword">else</span> {
+            err += <span class="hljs-string">&quot;, width is less than zero&quot;</span>
+        }
+    }
+    <span class="hljs-keyword">if</span> err != <span class="hljs-string">&quot;&quot;</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, &amp;areaError{err, length, width}
+    }
+    <span class="hljs-keyword">return</span> length * width, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-keyword">func</span> main() {
+    length, width := <span class="hljs-number">-5.0</span>, <span class="hljs-number">-9.0</span>
+    area, err := rectArea(length, width)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> err, ok := err.(*areaError); ok {
+            <span class="hljs-keyword">if</span> err.lengthNegative() {
+                fmt.Printf(<span class="hljs-string">&quot;error: length %0.2f is less than zero\n&quot;</span>, err.length)
+
+            }
+            <span class="hljs-keyword">if</span> err.widthNegative() {
+                fmt.Printf(<span class="hljs-string">&quot;error: width %0.2f is less than zero\n&quot;</span>, err.width)
+
+            }
+            <span class="hljs-keyword">return</span>
+        }
+    }
+    fmt.Println(<span class="hljs-string">&quot;area of rect&quot;</span>, area)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/VRSrXJLzfbq" target="_blank">Run in playground</a>
+&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">error: length -5.00 is less than zero
+error: width -9.00 is less than zero
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x4E86;<code>error</code>&#x5904;&#x7406;&#x6559;&#x7A0B;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4E24;&#x79CD;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x4EE5;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;&#x7684;&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x3002;&#x6211;&#x4F1A;&#x7559;&#x4E0B;&#x5B83;&#x4F5C;&#x4E3A;&#x7EC3;&#x4E60;&#xFF0C;&#x8BA9;&#x60A8;&#x5F04;&#x6E05;&#x695A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6B64;&#x7B56;&#x7565;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="part_30_error_handling.html" class="navigation navigation-prev " aria-label="Previous page: 第30节：错误处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="part_32_panic_and_recover.html" class="navigation navigation-next " aria-label="Next page: 第32节: panic和recover">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第31节: 自定义错误","level":"1.12.3","depth":2,"next":{"title":"第32节: panic和recover","level":"1.12.4","depth":2,"path":"chap11/part_32_panic_and_recover.md","ref":"chap11/part_32_panic_and_recover.md","articles":[]},"previous":{"title":"第30节：错误处理","level":"1.12.2","depth":2,"path":"chap11/part_30_error_handling.md","ref":"chap11/part_30_error_handling.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap11/part_31_custom_errors.md","mtime":"2019-04-08T09:49:58.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T09:51:51.257Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

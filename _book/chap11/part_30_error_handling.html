@@ -1,0 +1,1164 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第30节：错误处理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="part_31_custom_errors.html" />
+    
+    
+    <link rel="prev" href="part_29_defer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章：介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chap1/part_1_introduction_and_installation.html">
+            
+                <a href="../chap1/part_1_introduction_and_installation.html">
+            
+                    
+                    第1节：介绍和安装 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chap1/part_2_hello_world.html">
+            
+                <a href="../chap1/part_2_hello_world.html">
+            
+                    
+                    第2节：Hello, World x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第二章：变量、类型、常量
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chap2/part_3_variables.html">
+            
+                <a href="../chap2/part_3_variables.html">
+            
+                    
+                    第3节：变量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chap2/part_4_types.html">
+            
+                <a href="../chap2/part_4_types.html">
+            
+                    
+                    第4节：类型 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chap2/part_constants.html">
+            
+                <a href="../chap2/part_constants.html">
+            
+                    
+                    第5节：常量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第三章：函数和包
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chap3/part_6_functions.html">
+            
+                <a href="../chap3/part_6_functions.html">
+            
+                    
+                    第6节：函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chap3/part_7_packages.html">
+            
+                <a href="../chap3/part_7_packages.html">
+            
+                    
+                    第7节：包 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第四章：条件语句和循环
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chap4/part_8_if_else.html">
+            
+                <a href="../chap4/part_8_if_else.html">
+            
+                    
+                    第8节：if else 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chap4/part_9_loops.html">
+            
+                <a href="../chap4/part_9_loops.html">
+            
+                    
+                    第9节：循环 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chap4/part_10_switch.html">
+            
+                <a href="../chap4/part_10_switch.html">
+            
+                    
+                    第10节：switch 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第五章：数组、切片、可变函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chap5/part_11_arrays_and_slices.html">
+            
+                <a href="../chap5/part_11_arrays_and_slices.html">
+            
+                    
+                    第11节：数组和切片 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chap5/part_12_variadic_functions.html">
+            
+                <a href="../chap5/part_12_variadic_functions.html">
+            
+                    
+                    第12节：可变函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第六章：更多类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chap6/part_13_maps.html">
+            
+                <a href="../chap6/part_13_maps.html">
+            
+                    
+                    第13节: maps x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chap6/part_14_strings.html">
+            
+                <a href="../chap6/part_14_strings.html">
+            
+                    
+                    第14节：字符串 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第七章：指针、结构、方法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chap7/part_15_pointers.html">
+            
+                <a href="../chap7/part_15_pointers.html">
+            
+                    
+                    第15节: 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chap7/part_16_structs.html">
+            
+                <a href="../chap7/part_16_structs.html">
+            
+                    
+                    第16节：结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chap7/part_17_methods.html">
+            
+                <a href="../chap7/part_17_methods.html">
+            
+                    
+                    第17节：方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第八章：接口
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chap8/part_18_interfaces_1.html">
+            
+                <a href="../chap8/part_18_interfaces_1.html">
+            
+                    
+                    第18节: 接口-i x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chap8/part_19_interfaces_2.html">
+            
+                <a href="../chap8/part_19_interfaces_2.html">
+            
+                    
+                    第19节：接口-ii x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    第九章：并发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chap9/part_20_introduction_to_concurrency.html">
+            
+                <a href="../chap9/part_20_introduction_to_concurrency.html">
+            
+                    
+                    第20节: 并发介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chap9/part_21_goroutines.html">
+            
+                <a href="../chap9/part_21_goroutines.html">
+            
+                    
+                    第21节：协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chap9/part_22_channels.html">
+            
+                <a href="../chap9/part_22_channels.html">
+            
+                    
+                    第22节: 通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../chap9/part_23_buffered_channels_worker_pools.html">
+            
+                <a href="../chap9/part_23_buffered_channels_worker_pools.html">
+            
+                    
+                    第23节：缓冲通道和协程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../chap9/part_24_select.html">
+            
+                <a href="../chap9/part_24_select.html">
+            
+                    
+                    第24节: select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../chap9/part_25_mutex.html">
+            
+                <a href="../chap9/part_25_mutex.html">
+            
+                    
+                    第25节: 互斥锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    第十章：面向对象编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../chap10/part_26_structs_instead_of_classes.html">
+            
+                <a href="../chap10/part_26_structs_instead_of_classes.html">
+            
+                    
+                    第26节: 结构替代类 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../chap10/part_27_inheritance.html">
+            
+                <a href="../chap10/part_27_inheritance.html">
+            
+                    
+                    第27节：组合替代继承 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../chap10/part_28_polymorphism.html">
+            
+                <a href="../chap10/part_28_polymorphism.html">
+            
+                    
+                    第28节: 多态 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    第十一章：延迟函数和错误处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="part_29_defer.html">
+            
+                <a href="part_29_defer.html">
+            
+                    
+                    第29节: defer函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.2" data-path="part_30_error_handling.html">
+            
+                <a href="part_30_error_handling.html">
+            
+                    
+                    第30节：错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="part_31_custom_errors.html">
+            
+                <a href="part_31_custom_errors.html">
+            
+                    
+                    第31节: 自定义错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="part_32_panic_and_recover.html">
+            
+                <a href="part_32_panic_and_recover.html">
+            
+                    
+                    第32节: panic和recover
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    第十二章：头等函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../chap12/part_33_first_class_functions.html">
+            
+                <a href="../chap12/part_33_first_class_functions.html">
+            
+                    
+                    第33节: 头等函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    第十三章：反射
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../chap13/part_34_reflection.html">
+            
+                <a href="../chap13/part_34_reflection.html">
+            
+                    
+                    第34节: 反射 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    第十四章：文件处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="part_35_read_files.html">
+            
+                <a href="part_35_read_files.html">
+            
+                    
+                    第35节: 读文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="part_36_write_files.html">
+            
+                <a href="part_36_write_files.html">
+            
+                    
+                    第36节: 写文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第30节：错误处理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<ul>
+<li>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://golangbot.com/error-handling/#errortyperepresentation" target="_blank">Part 30: Error Handling</a></li>
+<li>&#x539F;&#x6587;&#x4F5C;&#x8005;&#xFF1A;<a href="https://golangbot.com/about/" target="_blank">Naveen R</a></li>
+<li>&#x8BD1;&#x8005;&#xFF1A;&#x5494;&#x53FD;&#x5494;&#x53FD;
+&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;&#x3002;</li>
+</ul>
+</blockquote>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-error">&#x4EC0;&#x4E48;&#x662F; Error</h2>
+<p>Error &#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x5C1D;&#x8BD5;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x5B83;&#x5C31;&#x4EE3;&#x8868;&#x4E00;&#x79CD;<code>error</code>&#x3002;
+Go &#x4E2D;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;<code>error</code>&#x7C7B;&#x578B;&#x8868;&#x793A;&#x9519;&#x8BEF;&#x3002;
+&#x5C31;&#x50CF;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7684;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#xFF0C;&#x5982; int&#xFF0C;float64&#xFF0C;... <code>error</code>&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x4ECE;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7B49;&#x7B49;&#x3002;</p>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<p>&#x7528;&#x6253;&#x5F00;&#x4E86;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;os&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    f, err := os.Open(<span class="hljs-string">&quot;/test.txt&quot;</span>)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        fmt.Println(err)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Println(f.Name(), <span class="hljs-string">&quot;opened successfully&quot;</span>)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/ZZeAGiDCJZQ" target="_blank">Run in playground</a></p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8BD5;&#x56FE;&#x5728;&#x8DEF;&#x5F84;/test.txt &#x4E2D;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x3002; os &#x5305;&#x7684; Open &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF0C;</p>
+<pre><code class="lang-plain">func Open(name string) (file *File, err error)
+</code></pre>
+<p>&#x5982;&#x679C;&#x6587;&#x4EF6;&#x88AB;&#x6210;&#x529F;&#x6253;&#x5F00;&#xFF0C;&#x5219; Open &#x51FD;&#x6570;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x540C;&#x65F6; err &#x4E3A; nil&#x3002;&#x5982;&#x679C;&#x5728;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x65F6;&#x51FA;&#x9519;&#xFF0C;err &#x5C06;&#x8FD4;&#x56DE;&#x975E; nil &#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48;&#x6309;&#x7167;&#x60EF;&#x4F8B;&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x6700;&#x540E;&#x9762;&#x90A3;&#x4E00;&#x4E2A;&#x503C;&#x5C31;&#x662F; err&#x3002;&#x6240;&#x4EE5;&#xFF0C;Open &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x662F; err&#x3002;</p>
+<p>&#x5728; Go &#x4E2D;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x7684;&#x60EF;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x4E0E; nil &#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002; &#x5982;&#x679C;&#x8FD4;&#x56DE;&#x7684; err &#x662F; nil&#xFF0C;&#x5219;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x975E; nil &#x503C;&#x5219;&#x8868;&#x793A;&#x5B58;&#x5728;&#x9519;&#x8BEF;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 10 &#x884C;&#x68C0;&#x67E5;&#x9519;&#x8BEF;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4E0D;&#x662F; nil&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x5E76;&#x4ECE; main &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x8FD0;&#x884C;&#x4E0A;&#x8FF0;&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">open /test.txt: No such file or directory
+</code></pre>
+<p>&#x5B8C;&#x7F8E;&#x1F603;&#x3002;&#x6211;&#x4EEC;&#x6253;&#x5370;&#x4E86;&#x4E00;&#x6761;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#xFF0C;&#x663E;&#x793A;&#x4E86;&#x8BE5;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+<h2 id="error-type">Error type</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x518D;&#x6DF1;&#x5165;&#x4E00;&#x70B9;&#xFF0C;&#x770B;&#x770B;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5185;&#x7F6E;&#x7684;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x3002; error &#x662F;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#xFF0C;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> error <span class="hljs-keyword">interface</span> {
+    Error() <span class="hljs-keyword">string</span>
+}
+</code></pre>
+<p>&#x5B83;&#x5305;&#x542B;&#x4E00;&#x4E2A; Error &#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x6B64;&#x63A5;&#x53E3;&#x7684;<code>Error</code>&#x5C31;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4F5C;<code>error</code>&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x4E86;<code>error</code>&#x7684;&#x63CF;&#x8FF0;</p>
+<p> &#x5F53;&#x6253;&#x5370;<code>error</code>&#x65F6;&#xFF0C;<code>fmt.Println</code>&#x51FD;&#x6570;&#x5728;&#x5185;&#x90E8;&#x8C03;&#x7528;<code>Error</code>&#x65B9;&#x6CD5;&#x4EE5;&#x83B7;&#x53D6;<code>error</code>&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x4E0A;&#x8FF0;&#x4F8B;&#x5B50;&#x7684;&#x7B2C; 11 &#x884C;&#x5C31;&#x5C55;&#x793A;&#x4E86;<code>error</code>&#x63CF;&#x8FF0;&#x7684;&#x6253;&#x5370;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x4ECE;-error-&#x4E2D;&#x63D0;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;">&#x5982;&#x4F55;&#x4ECE; error &#x4E2D;&#x63D0;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;</h2>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x6253;&#x5370;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5BFC;&#x81F4;<code>error</code>&#x7684;&#x6587;&#x4EF6;&#x7684;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;&#xFF0C;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x4E00;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x89E3;&#x6790;&#x9519;&#x8BEF;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8FD9;&#x662F;&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">open /test.txt: No such file or directory
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#x5E76;&#x83B7;&#x53D6;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4E3A;&#x201C;/test.txt&#x201D;&#xFF0C;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5728;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x6355;&#x83B7;&#x66F4;&#x591A;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x9519;&#x8BEF;&#x53BB;&#x505A;&#x533A;&#x522B;&#x5904;&#x7406;&#x3002;&#xFF08;&#x7C7B;&#x4F3C;&#x5176;&#x4ED6;&#x7684;&#x8BED;&#x8A00; catch &#x591A;&#x4E2A;&#x9519;&#x8BEF;&#xFF09;</p>
+<p>&#x6709;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x53EF;&#x9760;&#x5730;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x540D;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#xFF0C;&#x6807;&#x51C6;&#x7684; Go &#x5E93;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x9010;&#x4E00;&#x770B;&#x770B;&#x5B83;&#x4EEC;&#x3002;</p>
+<h4 id="1-&#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4ECE;&#x7ED3;&#x6784;&#x7684;&#x5B57;&#x6BB5;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;">1. &#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4ECE;&#x7ED3;&#x6784;&#x7684;&#x5B57;&#x6BB5;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;</h4>
+<p>&#x5982;&#x679C;&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;<a href="https://golang.org/pkg/os/#OpenFile" target="_blank">Open</a>&#x51FD;&#x6570;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5176;<code>error</code>&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x4E3A;<code>*PathError</code>&#x3002; <code>PathError</code>&#x662F;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x5728;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF0C;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> PathError <span class="hljs-keyword">struct</span> {
+    Op   <span class="hljs-keyword">string</span>
+    Path <span class="hljs-keyword">string</span>
+    Err  error
+}
+
+<span class="hljs-keyword">func</span> (e *PathError) Error() <span class="hljs-keyword">string</span> { <span class="hljs-keyword">return</span> e.Op + <span class="hljs-string">&quot; &quot;</span> + e.Path + <span class="hljs-string">&quot;: &quot;</span> + e.Err.Error() }
+</code></pre>
+<p>&#x5982;&#x679C;&#x6709;&#x5174;&#x8DA3;&#x77E5;&#x9053;&#x4E0A;&#x8FF0;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x5904;&#x627E;&#x5230;<a href="https://golang.org/src/os/error.go?s=653:716#L11" target="_blank">https://golang.org/src/os/error.go?s=653:716#L11</a></p>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x77E5;&#x9053;<code>* PathError</code>&#x901A;&#x8FC7;&#x58F0;&#x660E;<code>Error</code>&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;<code>error</code>&#x7684;&#x63A5;&#x53E3;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x8DEF;&#x5F84;&#xFF0C;&#x5B9E;&#x9645;&#x9519;&#x8BEF;&#x62FC;&#x63A5;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x8FD4;&#x56DE;&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x6536;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#xFF0C;</p>
+<pre><code class="lang-plain">open /test.txt: No such file or directory
+</code></pre>
+<p><code>PathError struct</code>&#x7684;<code>Path</code>&#x5B57;&#x6BB5;&#x5305;&#x542B;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x5E76;&#x6253;&#x5370;&#x8DEF;&#x5F84;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;os&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    f, err := os.Open(<span class="hljs-string">&quot;/test.txt&quot;</span>)
+    <span class="hljs-keyword">if</span> err, ok := err.(*os.PathError); ok {
+        fmt.Println(<span class="hljs-string">&quot;File at path&quot;</span>, err.Path, <span class="hljs-string">&quot;failed to open&quot;</span>)
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Println(f.Name(), <span class="hljs-string">&quot;opened successfully&quot;</span>)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/YQn7RX7KpPg" target="_blank">Run in playgroud</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5728;&#x7B2C; 10 &#x884C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4ECE;&#x7ED3;&#x6784;&#x5B57;&#x6BB5;&#x4E2D;&#x53BB;&#x83B7;&#x53D6;<code>error</code>&#x7684;&#x57FA;&#x7840;&#x503C;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5728; 11 &#x884C;&#x4F7F;&#x7528;<code>err.Path</code>&#x6253;&#x5370;&#x8DEF;&#x5F84;&#x3002; &#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF0C;</p>
+<pre><code class="lang-plain">File at path /test.txt failed to open
+</code></pre>
+<p>&#x592A;&#x68D2;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x6210;&#x529F;&#x5730;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4ECE;&#x7ED3;&#x6784;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
+<h4 id="2-&#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4ECE;&#x7ED3;&#x6784;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;">2. &#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4ECE;&#x7ED3;&#x6784;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;</h4>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x65AD;&#x8A00;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<p>&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;<code>DNSError</code>&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF0C;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> DNSError <span class="hljs-keyword">struct</span> {
+    ...
+}
+
+<span class="hljs-keyword">func</span> (e *DNSError) Error() <span class="hljs-keyword">string</span> {
+    ...
+}
+<span class="hljs-keyword">func</span> (e *DNSError) Timeout() <span class="hljs-keyword">bool</span> {
+    ...
+}
+<span class="hljs-keyword">func</span> (e *DNSError) Temporary() <span class="hljs-keyword">bool</span> {
+    ...
+}
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;<code>DNSError</code>&#x7ED3;&#x6784;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;<code>Timeout</code>&#x548C;<code>Temporary</code>&#xFF0C;&#x5B83;&#x4EEC;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x6307;&#x793A;<code>error</code>&#x662F;&#x7531;&#x4E8E;&#x8D85;&#x65F6;&#x8FD8;&#x662F;&#x6682;&#x65F6;&#x7684;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x65AD;&#x8A00;<code>* DNSError</code>&#x7C7B;&#x578B;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x7ED3;&#x6784;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x786E;&#x5B9A;<code>error</code>&#x662F;&#x6682;&#x65F6;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x8FD8;&#x662F;&#x8D85;&#x65F6;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;net&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    addr, err := net.LookupHost(<span class="hljs-string">&quot;golangbot123.com&quot;</span>)
+    <span class="hljs-keyword">if</span> err, ok := err.(*net.DNSError); ok {
+        <span class="hljs-keyword">if</span> err.Timeout() {
+            fmt.Println(<span class="hljs-string">&quot;operation timed out&quot;</span>)
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> err.Temporary() {
+            fmt.Println(<span class="hljs-string">&quot;temporary error&quot;</span>)
+        } <span class="hljs-keyword">else</span> {
+            fmt.Println(<span class="hljs-string">&quot;generic error: &quot;</span>, err)
+        }
+        <span class="hljs-keyword">return</span>
+    }
+    fmt.Println(addr)
+}
+</code></pre>
+<p><em>&#x6CE8;&#x610F;&#xFF1A;<code>LookupHost</code>&#x5728; playground &#x4E0A;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x8BF7;&#x5728;&#x672C;&#x5730;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x6B64;&#x7A0B;&#x5E8F;&#x3002;</em></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 9 &#x884C;&#x8BD5;&#x56FE;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x65E0;&#x6548;&#x57DF;&#x540D;<code>golangbot123.com</code>&#x7684; IP &#x5730;&#x5740;&#x3002;&#x5728;&#x7B2C; 10 &#x884C;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x65AD;&#x8A00;&#x7C7B;&#x578B;<code>* net.DNSError</code>&#x6765;&#x83B7;&#x53D6;&#x7ED3;&#x6784;&#x7684;&#x57FA;&#x7840;&#x503C;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 10 &#x548C; 13 &#x884C;&#x5206;&#x522B;&#x68C0;&#x67E5;<code>error</code>&#x662F;&#x7531;&#x4E8E;&#x8D85;&#x65F6;&#x8FD8;&#x662F;&#x4E34;&#x65F6;&#x5F15;&#x8D77;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x9519;&#x8BEF;&#x65E2;&#x4E0D;&#x662F;&#x6682;&#x65F6;&#x7684;&#x4E5F;&#x4E0D;&#x662F;&#x7531;&#x4E8E;&#x8D85;&#x65F6;&#xFF0C;&#x56E0;&#x6B64;&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">generic error:  lookup golangbot123.com: no such host
+</code></pre>
+<p>&#x5982;&#x679C;&#x9519;&#x8BEF;&#x662F;&#x4E34;&#x65F6;&#x7684;&#x6216;&#x7531;&#x4E8E;&#x8D85;&#x65F6;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684; if &#x8BED;&#x53E5;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5206;&#x60C5;&#x51B5;&#x9002;&#x5F53;&#x5730;&#x5904;&#x7406;&#x5B83;&#x4E86;&#x3002;</p>
+<h4 id="3-&#x76F4;&#x63A5;&#x6BD4;&#x8F83;">3. &#x76F4;&#x63A5;&#x6BD4;&#x8F83;</h4>
+<p>&#x83B7;&#x53D6;&#x6709;&#x5173;&#x9519;&#x8BEF;&#x7684;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x7684;&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x76F4;&#x63A5;&#x4E0E;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x7684;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<pre><code class="lang-filepath```&#x5305;&#x7684;```Glob```&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x4E0E;&#x6B63;&#x5219;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;```ErrBadPattern```&#x3002;">
+```ErrBadPattern```&#x5728;```filepath```&#x5305;&#x4E2D;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF0C;
+
+```golang
+var ErrBadPattern = errors.New(&quot;syntax error in pattern&quot;)
+</code></pre>
+<pre><code class="lang-errors.New```&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;```error```&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;">
+
+&#x5F53;&#x5339;&#x914D;&#x53D1;&#x751F;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;```Glob```&#x51FD;&#x6570;&#x8FD4;&#x56DE;```ErrBadPattern```&#x3002;
+
+
+&#x8BA9;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F;&#x6765;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;```error```&#x3002;
+
+```golang
+package main
+
+import (
+    &quot;fmt&quot;
+    &quot;path/filepath&quot;
+)
+
+func main() {
+    files, error := filepath.Glob(&quot;[&quot;)
+    if error != nil &amp;&amp; error == filepath.ErrBadPattern {
+        fmt.Println(error)
+        return
+    }
+    fmt.Println(&quot;matched files&quot;, files)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/YgX3hgjnFdi" target="_blank">Run in palygroud</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5339;&#x914D;&#x5E26;&#x6709;<code>[</code>&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x68C0;&#x67E5;<code>error</code>&#x662F;&#x5426;&#x4E3A;<code>nil</code>&#x3002;&#x8981;&#x83B7;&#x5F97;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 10 &#x884C;&#x76F4;&#x63A5;&#x5C06;&#x5B83;&#x4E0E;<code>filepath.ErrBadPattern</code>&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;&#x662F;&#x56E0;&#x4E3A;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#x3002;&#x6240;&#x4EE5;&#x8BE5;&#x7A0B;&#x5E8F;&#x5C06;&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">syntax error in pattern
+</code></pre>
+<p>&#x6807;&#x51C6;&#x5E93;&#x4F7F;&#x7528;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x6709;&#x5173;<code>error</code>&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x3002;</p>
+<h2 id="&#x4E0D;&#x8981;&#x5FFD;&#x89C6;-error">&#x4E0D;&#x8981;&#x5FFD;&#x89C6; Error</h2>
+<p>&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x5FFD;&#x89C6;<code>error</code>&#x3002;&#x5FFD;&#x7565;<code>error</code>&#x4F1A;&#x5F15;&#x53D1;&#x9EBB;&#x70E6;&#x3002;&#x8BA9;&#x6211;&#x91CD;&#x5199;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x8BE5;&#x793A;&#x4F8B;&#x5FFD;&#x7565;&#x4E86;<code>error</code>&#x5904;&#x7406;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;path/filepath&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    files, _ := filepath.Glob(<span class="hljs-string">&quot;[&quot;</span>)
+    fmt.Println(<span class="hljs-string">&quot;matched files&quot;</span>, files)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/gf828BB4DEW" target="_blank">Run in playground</a></p>
+<p>&#x6211;&#x4EEC;&#x4ECE;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x5339;&#x914D;&#x662F;&#x65E0;&#x6548;&#x7684;&#x3002;&#x6211;&#x5728;&#x7B2C; 9 &#x884C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>_</code>&#x6807;&#x8BC6;&#x7B26;&#x5FFD;&#x7565;&#x4E86;<code>Glob</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;<code>error</code>&#x3002;&#x7136;&#x540E;&#x5728;&#x7B2C; 10 &#x884C;&#x6253;&#x5370;&#x8BE5;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">matched files []
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5FFD;&#x7565;&#x4E86;<code>error</code>&#xFF0C;&#x4F3C;&#x4E4E;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x5339;&#x914D;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6A21;&#x5F0F;&#x672C;&#x8EAB;&#x7684;&#x683C;&#x5F0F;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x77E5;&#x9053;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x5BFC;&#x81F4;&#x4E86;&#x8BE5; <code>error</code>&#x7684;&#x4EA7;&#x751F;&#x3002;&#x6240;&#x4EE5;&#x4E0D;&#x8981;&#x5FFD;&#x89C6;<code>error</code>&#x3002;</p>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x4E86;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x53D1;&#x751F;&#x7684;<code>error</code>&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x68C0;&#x67E5;<code>error</code>&#x4EE5;&#x4ECE;&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49; <code>error</code>&#xFF0C;&#x5E76;&#x4E3A;&#x6807;&#x51C6;<code>error</code>&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="part_29_defer.html" class="navigation navigation-prev " aria-label="Previous page: 第29节: defer函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="part_31_custom_errors.html" class="navigation navigation-next " aria-label="Next page: 第31节: 自定义错误">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第30节：错误处理","level":"1.12.2","depth":2,"next":{"title":"第31节: 自定义错误","level":"1.12.3","depth":2,"path":"chap11/part_31_custom_errors.md","ref":"chap11/part_31_custom_errors.md","articles":[]},"previous":{"title":"第29节: defer函数","level":"1.12.1","depth":2,"path":"chap11/part_29_defer.md","ref":"chap11/part_29_defer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap11/part_30_error_handling.md","mtime":"2019-04-01T06:15:57.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T09:51:51.257Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1342 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第23节：缓冲通道和协程池 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="part_24_select.html" />
+    
+    
+    <link rel="prev" href="part_22_channels.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章：介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chap1/part_1_introduction_and_installation.html">
+            
+                <a href="../chap1/part_1_introduction_and_installation.html">
+            
+                    
+                    第1节：介绍和安装 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chap1/part_2_hello_world.html">
+            
+                <a href="../chap1/part_2_hello_world.html">
+            
+                    
+                    第2节：Hello, World x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第二章：变量、类型、常量
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chap2/part_3_variables.html">
+            
+                <a href="../chap2/part_3_variables.html">
+            
+                    
+                    第3节：变量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chap2/part_4_types.html">
+            
+                <a href="../chap2/part_4_types.html">
+            
+                    
+                    第4节：类型 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chap2/part_constants.html">
+            
+                <a href="../chap2/part_constants.html">
+            
+                    
+                    第5节：常量 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第三章：函数和包
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chap3/part_6_functions.html">
+            
+                <a href="../chap3/part_6_functions.html">
+            
+                    
+                    第6节：函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chap3/part_7_packages.html">
+            
+                <a href="../chap3/part_7_packages.html">
+            
+                    
+                    第7节：包 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第四章：条件语句和循环
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chap4/part_8_if_else.html">
+            
+                <a href="../chap4/part_8_if_else.html">
+            
+                    
+                    第8节：if else 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chap4/part_9_loops.html">
+            
+                <a href="../chap4/part_9_loops.html">
+            
+                    
+                    第9节：循环 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chap4/part_10_switch.html">
+            
+                <a href="../chap4/part_10_switch.html">
+            
+                    
+                    第10节：switch 语句 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第五章：数组、切片、可变函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chap5/part_11_arrays_and_slices.html">
+            
+                <a href="../chap5/part_11_arrays_and_slices.html">
+            
+                    
+                    第11节：数组和切片 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chap5/part_12_variadic_functions.html">
+            
+                <a href="../chap5/part_12_variadic_functions.html">
+            
+                    
+                    第12节：可变函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第六章：更多类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chap6/part_13_maps.html">
+            
+                <a href="../chap6/part_13_maps.html">
+            
+                    
+                    第13节: maps x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chap6/part_14_strings.html">
+            
+                <a href="../chap6/part_14_strings.html">
+            
+                    
+                    第14节：字符串 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第七章：指针、结构、方法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chap7/part_15_pointers.html">
+            
+                <a href="../chap7/part_15_pointers.html">
+            
+                    
+                    第15节: 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chap7/part_16_structs.html">
+            
+                <a href="../chap7/part_16_structs.html">
+            
+                    
+                    第16节：结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chap7/part_17_methods.html">
+            
+                <a href="../chap7/part_17_methods.html">
+            
+                    
+                    第17节：方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第八章：接口
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../chap8/part_18_interfaces_1.html">
+            
+                <a href="../chap8/part_18_interfaces_1.html">
+            
+                    
+                    第18节: 接口-i x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../chap8/part_19_interfaces_2.html">
+            
+                <a href="../chap8/part_19_interfaces_2.html">
+            
+                    
+                    第19节：接口-ii x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    第九章：并发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="part_20_introduction_to_concurrency.html">
+            
+                <a href="part_20_introduction_to_concurrency.html">
+            
+                    
+                    第20节: 并发介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="part_21_goroutines.html">
+            
+                <a href="part_21_goroutines.html">
+            
+                    
+                    第21节：协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="part_22_channels.html">
+            
+                <a href="part_22_channels.html">
+            
+                    
+                    第22节: 通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.4" data-path="part_23_buffered_channels_worker_pools.html">
+            
+                <a href="part_23_buffered_channels_worker_pools.html">
+            
+                    
+                    第23节：缓冲通道和协程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="part_24_select.html">
+            
+                <a href="part_24_select.html">
+            
+                    
+                    第24节: select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="part_25_mutex.html">
+            
+                <a href="part_25_mutex.html">
+            
+                    
+                    第25节: 互斥锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    第十章：面向对象编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../chap10/part_26_structs_instead_of_classes.html">
+            
+                <a href="../chap10/part_26_structs_instead_of_classes.html">
+            
+                    
+                    第26节: 结构替代类 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../chap10/part_27_inheritance.html">
+            
+                <a href="../chap10/part_27_inheritance.html">
+            
+                    
+                    第27节：组合替代继承 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../chap10/part_28_polymorphism.html">
+            
+                <a href="../chap10/part_28_polymorphism.html">
+            
+                    
+                    第28节: 多态 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    第十一章：延迟函数和错误处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../chap11/part_29_defer.html">
+            
+                <a href="../chap11/part_29_defer.html">
+            
+                    
+                    第29节: defer函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../chap11/part_30_error_handling.html">
+            
+                <a href="../chap11/part_30_error_handling.html">
+            
+                    
+                    第30节：错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../chap11/part_31_custom_errors.html">
+            
+                <a href="../chap11/part_31_custom_errors.html">
+            
+                    
+                    第31节: 自定义错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../chap11/part_32_panic_and_recover.html">
+            
+                <a href="../chap11/part_32_panic_and_recover.html">
+            
+                    
+                    第32节: panic和recover
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    第十二章：头等函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../chap12/part_33_first_class_functions.html">
+            
+                <a href="../chap12/part_33_first_class_functions.html">
+            
+                    
+                    第33节: 头等函数 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    第十三章：反射
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../chap13/part_34_reflection.html">
+            
+                <a href="../chap13/part_34_reflection.html">
+            
+                    
+                    第34节: 反射 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    第十四章：文件处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../chap11/part_35_read_files.html">
+            
+                <a href="../chap11/part_35_read_files.html">
+            
+                    
+                    第35节: 读文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../chap11/part_36_write_files.html">
+            
+                <a href="../chap11/part_36_write_files.html">
+            
+                    
+                    第36节: 写文件 x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第23节：缓冲通道和协程池</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<ul>
+<li>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://golangbot.com/buffered-channels-worker-pools/" target="_blank">Part 23: Buffered Channels and Worker Pools</a></li>
+<li>&#x539F;&#x6587;&#x4F5C;&#x8005;&#xFF1A;<a href="https://golangbot.com/about/" target="_blank">Naveen R</a></li>
+<li>&#x8BD1;&#x8005;&#xFF1A;&#x5494;&#x53FD;&#x5494;&#x53FD;
+&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;&#x3002;</li>
+</ul>
+</blockquote>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x7F13;&#x51B2;channel">&#x4EC0;&#x4E48;&#x662F;&#x7F13;&#x51B2;<code>channel</code></h2>
+<p>&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x6240;&#x6709;<code>channel</code>&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x3002;&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5728;<code>channel</code>&#x6559;&#x7A0B;&#x4E2D;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x7684;&#x90A3;&#x6837;&#xFF0C;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x5230;&#x65E0;&#x7F13;&#x51B2;&#x7684;<code>channel</code>&#x90FD;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7F13;&#x51B2;&#x533A;&#x521B;&#x5EFA;<code>channel</code>&#x3002;&#x4EC5;&#x5F53;&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x6EE1;&#x65F6;&#x624D;&#x4F1A;&#x963B;&#x585E;&#x5BF9;&#x7F13;&#x51B2;<code>channel</code>&#x7684;&#x53D1;&#x9001;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x4EC5;&#x5F53;&#x7F13;&#x51B2;&#x533A;&#x4E3A;&#x7A7A;&#x65F6;&#x624D;&#x963B;&#x585E;&#x4ECE;&#x7F13;&#x51B2;<code>channel</code>&#x63A5;&#x6536;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>capacity</code>&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;<code>make</code>&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x7F13;&#x51B2;<code>channel</code>&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6307;&#x5B9A;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<pre><code class="lang-golang">ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">type</span>, capacity)
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x7F13;&#x51B2;&#x533A;&#x7684;<code>channel</code>&#xFF0C;&#x4E0A;&#x8FF0;&#x8BED;&#x6CD5;&#x4E2D;&#x7684;&#x5BB9;&#x91CF;&#x5E94;&#x5927;&#x4E8E; 0&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x65E0;&#x7F13;&#x51B2;&#x901A;&#x9053;&#x7684;&#x5BB9;&#x91CF;&#x4E3A; 0&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#x901A;&#x9053;&#x65F6;&#x7701;&#x7565;&#x4E86;&#x5BB9;&#x91CF;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;<code>channel</code>&#xFF0C;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+)
+
+
+<span class="hljs-keyword">func</span> main() {
+    ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">string</span>, <span class="hljs-number">2</span>)
+    ch &lt;- <span class="hljs-string">&quot;naveen&quot;</span>
+    ch &lt;- <span class="hljs-string">&quot;paul&quot;</span>
+    fmt.Println(&lt;- ch)
+    fmt.Println(&lt;- ch)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/gjBXmxagASP" target="_blank">Run in playgroud</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x7B2C; 9 &#x884C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BB9;&#x91CF;&#x4E3A; 2 &#x7684;&#x7F13;&#x51B2;<code>channel</code>&#x3002;&#x7531;&#x4E8E;<code>channel</code>&#x7684;&#x5BB9;&#x91CF;&#x4E3A; 2&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5C06; 2 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x800C;&#x4E0D;&#x4F1A;&#x88AB;&#x963B;&#x585E;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 10 &#x548C; 11 &#x884C;&#x5199;&#x5165; 2 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x968F;&#x540E;&#x8BFB;&#x53D6;&#x4E86;&#x5199;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">naveen
+paul
+</code></pre>
+<h2 id="&#x53E6;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;">&#x53E6;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x518D;&#x770B;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;<code>channel</code>&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5176;&#x4E2D;<code>channel</code>&#x7684;&#x503C;&#x5199;&#x5165;<code>Goroutine</code>&#x5E76;&#x4ECE;<code>main Goroutine</code>&#x8BFB;&#x53D6;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C06;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x4F55;&#x65F6;&#x5199;&#x5165;&#x7F13;&#x51B2;&#x7684;<code>channel</code>&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;time&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> write(ch <span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++ {
+        ch &lt;- i
+        fmt.Println(<span class="hljs-string">&quot;successfully wrote&quot;</span>, i, <span class="hljs-string">&quot;to ch&quot;</span>)
+    }
+    <span class="hljs-built_in">close</span>(ch)
+}
+<span class="hljs-keyword">func</span> main() {
+    ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>, <span class="hljs-number">2</span>)
+    <span class="hljs-keyword">go</span> write(ch)
+    time.Sleep(<span class="hljs-number">2</span> * time.Second)
+    <span class="hljs-keyword">for</span> v := <span class="hljs-keyword">range</span> ch {
+        fmt.Println(<span class="hljs-string">&quot;read value&quot;</span>, v,<span class="hljs-string">&quot;from ch&quot;</span>)
+        time.Sleep(<span class="hljs-number">2</span> * time.Second)
+
+    }
+}
+</code></pre>
+<p><a href="https://play.golang.org/p/bKe5GdgMK9" target="_blank">Run in playgroud</a></p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5728;&#x7B2C; 16 &#x884C;&#x521B;&#x5EFA;&#x4E86;&#x5BB9;&#x91CF;&#x4E3A; 2 &#x7684;&#x7F13;&#x51B2;<code>channel ch</code>&#x3002;<code>main Goroutine</code>&#x5C06;<code>ch</code>&#x4F20;&#x7ED9;<code>write Goroutine</code>&#xFF0C;&#x7136;&#x540E;<code>main Goroutine</code>&#x4F11;&#x7720; 2 &#x79D2;&#x949F;&#x3002;&#x5728;&#x6B64;&#x671F;&#x95F4;&#xFF0C;<code>write Goroutine</code>&#x5728;&#x8FD0;&#x884C;&#x3002;<code>write Goroutine</code>&#x6709;&#x4E00;&#x4E2A; for &#x5FAA;&#x73AF;&#xFF0C;&#x5B83;&#x5C06; 0 &#x5230; 4 &#x7684;&#x6570;&#x5B57;&#x5FAA;&#x73AF;&#x5199;&#x5165;<code>channel ch</code>&#x3002;&#x7531;&#x4E8E;&#x5BB9;&#x91CF;&#x4E3A; 2&#xFF0C;&#x56E0;&#x6B64;&#x80FD;&#x591F;&#x5C06;&#x503C; 0 &#x548C; 1 &#x5199;&#x5165;&#xFF0C;&#x7136;&#x540E;&#x963B;&#x585E;&#x76F4;&#x5230;&#x4ECE;<code>channel ch</code>&#x8BFB;&#x53D6;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x503C;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4F1A;&#x7ACB;&#x5373;&#x6253;&#x5370;&#x4EE5;&#x4E0B; 2 &#x884C;&#xFF0C;</p>
+<pre><code class="lang-plain">successfully wrote 0 to ch
+successfully wrote 1 to ch
+</code></pre>
+<p>&#x5728;&#x6253;&#x5370;&#x4E0A;&#x8FF0;&#x4E24;&#x884C;&#x4E4B;&#x540E;&#xFF0C;<code>write Goroutine</code>&#x4E2D;&#x7684;&#x5199;&#x5165;&#x88AB;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;<code>channel ch</code>&#x7684;&#x6570;&#x636E;&#x88AB;&#x8BFB;&#x53D6;&#x3002;&#x7531;&#x4E8E;<code>main Goroutine</code>&#x4F1A;&#x4F11;&#x7720; 2 &#x79D2;&#xFF0C;&#x56E0;&#x6B64;&#x7A0B;&#x5E8F;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684; 2 &#x79D2;&#x5185;&#x4E0D;&#x4F1A;&#x6253;&#x5370;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002;&#x5F53;<code>main Goroutine</code>&#x5728;&#x88AB;&#x5524;&#x9192;&#x540E;&#xFF0C;&#x4F7F;&#x7528;<code>for range</code>&#x5FAA;&#x73AF;&#x5F00;&#x59CB;&#x4ECE;<code>channel ch</code>&#x8BFB;&#x53D6;&#x5E76;&#x6253;&#x5370;&#x8BFB;&#x53D6;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6B21;&#x4F11;&#x7720; 2 &#x79D2;&#xFF0C;&#x6B64;&#x5FAA;&#x73AF;&#x7EE7;&#x7EED;&#xFF0C;&#x76F4;&#x5230; ch &#x5173;&#x95ED;&#x3002;&#x56E0;&#x6B64;&#x7A0B;&#x5E8F;&#x5C06;&#x5728; 2 &#x79D2;&#x540E;&#x6253;&#x5370;&#x4EE5;&#x4E0B;&#x884C;&#xFF0C;</p>
+<pre><code class="lang-plain">read value 0 from ch
+successfully wrote 2 to ch
+</code></pre>
+<p>&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x76F4;&#x5230;&#x6240;&#x6709;&#x503C;&#x90FD;&#x5199;&#x5165;&#x5E76;&#x5728;&#x5173;&#x95ED; <code>channel</code>&#x3002;&#x6700;&#x7EC8;&#x7684;&#x8F93;&#x51FA;&#x662F;&#xFF0C;</p>
+<pre><code class="lang-plain">successfully wrote 0 to ch
+successfully wrote 1 to ch
+read value 0 from ch
+successfully wrote 2 to ch
+read value 1 from ch
+successfully wrote 3 to ch
+read value 2 from ch
+successfully wrote 4 to ch
+read value 3 from ch
+read value 4 from ch
+</code></pre>
+<h2 id="&#x6B7B;&#x9501;">&#x6B7B;&#x9501;</h2>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">string</span>, <span class="hljs-number">2</span>)
+    ch &lt;- <span class="hljs-string">&quot;naveen&quot;</span>
+    ch &lt;- <span class="hljs-string">&quot;paul&quot;</span>
+    ch &lt;- <span class="hljs-string">&quot;steve&quot;</span>
+    fmt.Println(&lt;-ch)
+    fmt.Println(&lt;-ch)
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/OTklpSVa9RJ" target="_blank">Run in playgroud</a>
+&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06; 3 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x5BB9;&#x91CF;&#x4E3A; 2 &#x7684;&#x7F13;&#x51B2;<code>channel</code>&#x3002;&#x5F53;&#x7B2C;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x7684;&#x65F6;&#x5019;&#x5DF2;&#x8D85;&#x8FC7;&#x5176;&#x5BB9;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x88AB;&#x963B;&#x585E;&#x3002;&#x73B0;&#x5728;&#x5FC5;&#x987B;&#x7B49;&#x5F85;&#x5176;&#x4ED6;<code>Goroutine</code>&#x4ECE;<code>channel</code>&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x5199;&#x5165;&#xFF0C;&#x4F46;&#x5728;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x4ECE;&#x8BE5;<code>channel</code>&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;<code>Goroutine</code>&#x3002;&#x56E0;&#x6B64;&#x4F1A;&#x51FA;&#x73B0;&#x6B7B;&#x9501;&#xFF0C;&#x7A0B;&#x5E8F;&#x5C06;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6253;&#x5370;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF0C;</p>
+<pre><code class="lang-plain">fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.main()
+    /tmp/sandbox274756028/main.go:11 +0x100
+</code></pre>
+<h2 id="&#x957F;&#x5EA6;-vs-&#x5BB9;&#x91CF;">&#x957F;&#x5EA6; VS &#x5BB9;&#x91CF;</h2>
+<p>&#x5BB9;&#x91CF;&#x662F;<code>channel</code>&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x7684;&#x503C;&#x7684;&#x6570;&#x91CF;&#x3002;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>make</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x957F;&#x5EA6;&#x662F;&#x5F53;&#x524D;&#x5728;<code>channel</code>&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x6570;&#x91CF;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x4F1A;&#x8BA9;&#x7406;&#x89E3;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x1F600;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> main() {
+    ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">string</span>, <span class="hljs-number">3</span>)
+    ch &lt;- <span class="hljs-string">&quot;naveen&quot;</span>
+    ch &lt;- <span class="hljs-string">&quot;paul&quot;</span>
+    fmt.Println(<span class="hljs-string">&quot;capacity is&quot;</span>, <span class="hljs-built_in">cap</span>(ch))
+    fmt.Println(<span class="hljs-string">&quot;length is&quot;</span>, <span class="hljs-built_in">len</span>(ch))
+    fmt.Println(<span class="hljs-string">&quot;read value&quot;</span>, &lt;-ch)
+    fmt.Println(<span class="hljs-string">&quot;new length is&quot;</span>, <span class="hljs-built_in">len</span>(ch))
+}
+</code></pre>
+<p><a href="http://play.flysnow.org/p/pEZBLtHqQml" target="_blank">Run in playgroud</a></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x7684;<code>channel</code>&#x5BB9;&#x91CF;&#x4E3A; 3&#xFF0C;&#x5373;&#x5B83;&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3; 3 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5206;&#x522B;&#x5199;&#x5165; 2 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x73B0;&#x5728;&#x8BE5;<code>channel</code>&#x6709; 2 &#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56E0;&#x6B64;&#x5176;&#x957F;&#x5EA6;&#x4E3A; 2&#x3002; &#x6211;&#x4EEC;&#x4ECE;<code>channel</code>&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x73B0;&#x5728;<code>channel</code>&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x7684;&#x957F;&#x5EA6;&#x53D8;&#x4E3A; 1&#x3002;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">capacity is 3
+length is 2
+read value naveen
+new length is 1
+</code></pre>
+<h2 id="waitgroup">WaitGroup</h2>
+<p>&#x672C;&#x6559;&#x7A0B;&#x7684;&#x4E0B;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5173;&#x4E8E;<code>Worker Pools</code>&#x3002;&#x8981;&#x4E86;&#x89E3;&#x5DE5;&#x4F5C;&#x6C60;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x9700;&#x8981;&#x4E86;&#x89E3;<code>WaitGroup</code>&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5C06;&#x7528;&#x4E8E;&#x5DE5;&#x4F5C;&#x6C60;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><code>WaitGroup</code>&#x7528;&#x4E8E;&#x963B;&#x585E;<code>main Goroutines</code>&#x76F4;&#x5230;&#x6240;&#x6709;<code>Goroutines</code>&#x5B8C;&#x6210;&#x6267;&#x884C;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#x6211;&#x4EEC;&#x6709; 3 &#x4E2A;&#x4ECE;<code>main Goroutine</code>&#x751F;&#x6210;&#x7684;<code>Goroutines</code>&#x9700;&#x8981;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x3002;<code>main Goroutines</code>&#x9700;&#x8981;&#x7B49;&#x5F85;&#x5176;&#x4ED6; 3 &#x4E2A;<code>Goroutines</code>&#x5B8C;&#x6210;&#x624D;&#x80FD;&#x7EC8;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x5728;<code>main Goroutines</code>&#x7EC8;&#x6B62;&#x65F6;&#xFF0C;&#x5176;&#x4F59;&#x7684;<code>Goroutines</code>&#x8FD8;&#x6CA1;&#x80FD;&#x5F97;&#x5F53;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>WaitGroup</code>&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x505C;&#x6B62;&#x7406;&#x8BBA;&#x4E0A;&#x4EE3;&#x7801;&#x1F600;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;sync&quot;</span>
+    <span class="hljs-string">&quot;time&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> process(i <span class="hljs-keyword">int</span>, wg *sync.WaitGroup) {
+    fmt.Println(<span class="hljs-string">&quot;started Goroutine &quot;</span>, i)
+    time.Sleep(<span class="hljs-number">2</span> * time.Second)
+    fmt.Printf(<span class="hljs-string">&quot;Goroutine %d ended\n&quot;</span>, i)
+    wg.Done()
+}
+
+<span class="hljs-keyword">func</span> main() {
+    no := <span class="hljs-number">3</span>
+    <span class="hljs-keyword">var</span> wg sync.WaitGroup
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; no; i++ {
+        wg.Add(<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">go</span> process(i, &amp;wg)
+    }
+    wg.Wait()
+    fmt.Println(<span class="hljs-string">&quot;All go routines finished executing&quot;</span>)
+}
+</code></pre>
+<p><a href="https://play.golang.org/p/CZNtu8ktQh" target="_blank">Run in playgroud</a></p>
+<p><code>WaitGroup</code>&#x662F;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 18 &#x884C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>WaitGroup</code>&#x7C7B;&#x578B;&#x7684;&#x7A7A;&#x503C;&#x53D8;&#x91CF;&#x3002; <code>WaitGroup</code>&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x8BA1;&#x6570;&#x5668;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x5728;<code>WaitGroup</code>&#x4E0A;&#x8C03;&#x7528;<code>int</code>&#x578B;&#x53C2;&#x6570;&#x8C03;&#x7528;<code>Add</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8BA1;&#x6570;&#x5668;&#x4F1A;&#x589E;&#x52A0;&#x4F20;&#x9012;&#x7ED9;<code>Add</code>&#x7684;&#x503C;&#x3002;&#x9012;&#x51CF;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728;<code>WaitGroup&#x4E0A;</code>&#x8C03;&#x7528;<code>Done</code>&#x65B9;&#x6CD5;&#x3002; <code>Wait</code>&#x65B9;&#x6CD5;&#x963B;&#x585E;&#x8C03;&#x7528;&#x5B83;&#x7684;<code>Goroutine</code>&#xFF0C;&#x76F4;&#x5230;&#x8BA1;&#x6570;&#x5668;&#x53D8;&#x4E3A;&#x96F6;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C; 20 &#x884C;&#x8C03;&#x7528;<code>wg.Add(1)</code>&#x5FAA;&#x73AF;&#x8FED;&#x4EE3; 3 &#x6B21;&#x3002;&#x6240;&#x4EE5;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x503C;&#x73B0;&#x5728;&#x53D8;&#x6210;&#x4E86; 3&#x3002; for &#x5FAA;&#x73AF;&#x4E5F;&#x4EA7;&#x751F; 3 &#x4E2A;<code>Goroutines</code>&#xFF0C;<code>main Goroutines</code>&#x5728;&#x7B2C; 23 &#x884C;&#x8C03;&#x7528;&#x4E86;<code>wg.Wait()</code>&#x4EE5;&#x963B;&#x585E;&#x76F4;&#x5230;&#x8BA1;&#x6570;&#x5668;&#x53D8;&#x4E3A;&#x96F6;&#x3002;&#x5728;<code>Goroutine</code>&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>wg.Done</code>&#x6765;&#x51CF;&#x5C11;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x503C;&#x3002; &#x4E00;&#x65E6;&#x6240;&#x6709; 3 &#x4E2A;&#x751F;&#x6210;&#x7684;<code>Goroutines</code>&#x5B8C;&#x6210;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>wg.Done()</code>&#x88AB;&#x8C03;&#x7528;&#x4E09;&#x6B21;&#xFF0C;&#x8BA1;&#x6570;&#x5668;&#x88AB;&#x6E05;&#x96F6;&#xFF0C;<code>main Goroutine</code>&#x88AB;&#x89E3;&#x9664;&#x963B;&#x585E;&#xFF0C;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x5B8C;&#x6210;&#xFF0C;&#x8F93;&#x51FA;&#xFF0C;</p>
+<pre><code class="lang-plain">started Goroutine  2
+started Goroutine  0
+started Goroutine  1
+Goroutine 0 ended
+Goroutine 2 ended
+Goroutine 1 ended
+All go routines finished executing
+</code></pre>
+<p>&#x5927;&#x5BB6;&#x7684;&#x8F93;&#x51FA;&#x53EF;&#x80FD;&#x4E0E;&#x6211;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x4E3A;<code>Goroutines</code>&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;:)&#x3002;</p>
+<h2 id="&#x534F;&#x7A0B;&#x6C60;&#x7684;&#x5B9E;&#x73B0;">&#x534F;&#x7A0B;&#x6C60;&#x7684;&#x5B9E;&#x73B0;</h2>
+<p>&#x7F13;&#x51B2;<code>channel</code>&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7528;&#x9014;&#x662F;<a href="https://en.wikipedia.org/wiki/Thread_pool" target="_blank">&#x534F;&#x7A0B;&#x6C60;</a>&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x534F;&#x7A0B;&#x6C60;&#x662F;&#x4E00;&#x7EC4;&#x534F;&#x7A0B;&#xFF0C;&#x5B83;&#x4EEC;&#x7B49;&#x5F85;&#x5206;&#x914D;&#x7ED9;&#x5B83;&#x4EEC;&#x4EFB;&#x52A1;&#x3002;&#x4E00;&#x65E6;&#x5B8C;&#x6210;&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C31;&#x4F1A;&#x518D;&#x6B21;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7F13;&#x51B2;<code>channel</code>&#x5B9E;&#x73B0;&#x534F;&#x7A0B;&#x6C60;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x534F;&#x7A0B;&#x6C60;&#x5C06;&#x6267;&#x884C;&#x67E5;&#x627E;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x7684;&#x6570;&#x5B57;&#x4E4B;&#x548C;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x9012; 234&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x5C06;&#x4E3A; 9&#xFF08;9 = 2 + 3 + 4&#xFF09;&#x3002;&#x534F;&#x7A0B;&#x6C60;&#x7684;&#x8F93;&#x5165;&#x5C06;&#x662F;&#x4F2A;&#x968F;&#x673A;&#x6574;&#x6570;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x4EEC;&#x534F;&#x7A0B;&#x6C60;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>Goroutines</code>&#x6C60;&#xFF0C;&#x7528;&#x4E8E;&#x76D1;&#x542C;&#x7F13;&#x51B2;<code>jobs channel</code>&#xFF0C;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x5206;&#x914D;</li>
+<li>&#x5411;<code>jobs channel</code>&#x6DFB;&#x52A0;&#x4EFB;&#x52A1;</li>
+<li>&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x5199;&#x5165;&#x7F13;&#x51B2;<code>results channel</code></li>
+<li>&#x4ECE;<code>results channel</code>&#x8BFB;&#x53D6;&#x548C;&#x6253;&#x5370;&#x7ED3;&#x679C;</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x9010;&#x6B65;&#x7F16;&#x5199;&#x6B64;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x4FBF;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA;&#x8868;&#x793A;&#x4EFB;&#x52A1;&#x548C;&#x7ED3;&#x679C;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">type</span> Job <span class="hljs-keyword">struct</span> {
+    id       <span class="hljs-keyword">int</span>
+    randomno <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">type</span> Result <span class="hljs-keyword">struct</span> {
+    job         Job
+    sumofdigits <span class="hljs-keyword">int</span>
+}
+</code></pre>
+<p>&#x6BCF;&#x4E2A;<code>Job</code>&#x7ED3;&#x6784;&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>id</code>&#x548C;<code>randomno</code>&#xFF0C;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x5404;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x603B;&#x548C;&#x3002;</p>
+<pre><code class="lang-Result```&#x7ED3;&#x6784;&#x6709;&#x4E00;&#x4E2A;```job```&#x5B57;&#x6BB5;&#x548C;```sumofdigits```&#x5B57;&#x6BB5;&#xFF0C;```sumofdigits```&#x5B57;&#x6BB5;&#x7528;&#x6765;&#x4FDD;&#x5B58;```job```&#x5404;&#x4E2A;&#x6570;&#x5B57;&#x4E4B;&#x548C;&#x7684;&#x7ED3;&#x679C;&#x3002;">
+&#x4E0B;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x548C;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#x7684;&#x7F13;&#x51B2;```channel```&#x3002;
+
+```golang
+var jobs = make(chan Job, 10)
+var results = make(chan Result, 10)
+</code></pre>
+<p><code>worker Goroutines</code>&#x5728;&#x4EFB;&#x52A1;&#x7F13;&#x51B2;<code>channel</code>&#x4E0A;&#x4FA6;&#x542C;&#x65B0;&#x4EFB;&#x52A1;&#x3002;&#x4E00;&#x65E6;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#xFF0C;&#x628A;&#x7ED3;&#x679C;&#x5199;&#x5165;&#x7ED3;&#x679C;&#x7F13;&#x51B2;<code>channel</code>&#x3002;</p>
+<p><code>digits</code>&#x51FD;&#x6570;&#x6267;&#x884C;&#x67E5;&#x627E;&#x6574;&#x6570;&#x7684;&#x5404;&#x4E2A;&#x6570;&#x5B57;&#x4E4B;&#x548C;&#x5E76;&#x8FD4;&#x56DE;&#x5B83;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x4E3A;&#x6B64;&#x51FD;&#x6570;&#x6DFB;&#x52A0; 2 &#x79D2;&#x7684;&#x4F11;&#x7720;&#xFF0C;&#x4EE5;&#x6A21;&#x62DF;&#x6B64;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#x7684;&#x573A;&#x666F;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> digits(number <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    sum := <span class="hljs-number">0</span>
+    no := number
+    <span class="hljs-keyword">for</span> no != <span class="hljs-number">0</span> {
+        digit := no % <span class="hljs-number">10</span>
+        sum += digit
+        no /= <span class="hljs-number">10</span>
+    }
+    time.Sleep(<span class="hljs-number">2</span> * time.Second)
+    <span class="hljs-keyword">return</span> sum
+}
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;<code>worker Goroutine</code>&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> worker(wg *sync.WaitGroup) {
+    <span class="hljs-keyword">for</span> job := <span class="hljs-keyword">range</span> jobs {
+        output := Result{job, digits(job.randomno)}
+        results &lt;- output
+    }
+    wg.Done()
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;<code>worker</code>&#xFF0C;&#x5B83;&#x4ECE;<code>jobs channel</code>&#x8BFB;&#x53D6;&#x4EFB;&#x52A1;&#xFF0C;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x548C;<code>digits</code>&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x521B;&#x5EFA;<code>Result</code>&#x7ED3;&#x6784;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x7ED3;&#x679C;&#x5199;&#x5165;&#x7ED3;&#x679C;&#x7F13;&#x51B2;<code>channel</code>&#x3002;&#x6B64;&#x51FD;&#x6570;&#x5C06;<code>WaitGroup wg</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5B83;&#x5C06;&#x8C03;&#x7528;<code>Done</code>&#x65B9;&#x6CD5;&#x7ED3;&#x675F;&#x5F53;&#x524D;<code>Goroutine</code>&#x7684;&#x963B;&#x585E;&#x3002;</p>
+<pre><code class="lang-createWorkerPool```&#x51FD;&#x6570;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;```Goroutines```&#x6C60;&#x3002;">```golang
+func createWorkerPool(noOfWorkers int) {
+    var wg sync.WaitGroup
+    for i := 0; i &lt; noOfWorkers; i++ {
+        wg.Add(1)
+        go worker(&amp;wg)
+    }
+    wg.Wait()
+    close(results)
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x5C06;&#x8981;&#x521B;&#x5EFA;&#x7684;<code>worker</code>&#x6570;&#x91CF;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;&#x5B83;&#x5728;&#x521B;&#x5EFA;<code>Goroutine</code>&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x4E86;<code>wg.Add(1)</code>&#x6765;&#x589E;&#x52A0;<code>WaitGroup</code>&#x8BA1;&#x6570;&#x5668;&#x3002;&#x7136;&#x540E;&#x5B83;&#x901A;&#x8FC7;&#x5C06;<code>WaitGroup wg</code>&#x7684;&#x5730;&#x5740;&#x4F20;&#x9012;&#x7ED9;<code>worker</code>&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;<code>worker Goroutines</code>&#x3002;&#x5728;&#x521B;&#x5EFA;&#x4E86;&#x6240;&#x9700;&#x7684;<code>worker Goroutines</code>&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>wg.Wait()</code>&#x6765;&#x963B;&#x585E;&#x5F53;&#x524D;&#x534F;&#x7A0B;&#x76F4;&#x5230;&#x6240;&#x6709;<code>Goroutines</code>&#x5B8C;&#x6210;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x5173;&#x95ED;<code>results channel</code>&#xFF0C;&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x7684;<code>Goroutines</code>&#x90FD;&#x5DF2;&#x5B8C;&#x6210;&#x6267;&#x884C;&#xFF0C;&#x6CA1;&#x6709;&#x7ED3;&#x679C;&#x88AB;&#x5199;&#x5165;&#x8BE5;<code>results channel</code>&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5199;&#x597D;&#x4E86;&#x534F;&#x7A0B;&#x6C60;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x7F16;&#x5199;&#x5C06;&#x4EFB;&#x52A1;&#x5206;&#x914D;&#x7ED9;&#x534F;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> allocate(noOfJobs <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; noOfJobs; i++ {
+        randomno := rand.Intn(<span class="hljs-number">999</span>)
+        job := Job{i, randomno}
+        jobs &lt;- job
+    }
+    <span class="hljs-built_in">close</span>(jobs)
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;<code>allocate</code>&#x51FD;&#x6570;&#x5C06;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x4EFB;&#x52A1;&#x6570;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x751F;&#x6210;&#x6700;&#x5927;&#x503C;&#x4E3A; 998 &#x7684;&#x4F2A;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x968F;&#x673A;&#x6570;&#x521B;&#x5EFA;<code>Job</code>&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x5C06; for &#x5FAA;&#x73AF;&#x8BA1;&#x6570;&#x5668;&#x7684;<code>i</code>&#x4F5C;&#x4E3A;<code>id</code>&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5B83;&#x4EEC;&#x5199;&#x5165;<code>jobs channel</code>&#x3002;&#x5B83;&#x5728;&#x5199;&#x5B8C;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x540E;&#x5173;&#x95ED;&#x4E86;<code>jobs channel</code>&#x3002;</p>
+<p>&#x4E0B;&#x4E00;&#x6B65;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8BFB;&#x53D6;<code>results channel</code>&#x5E76;&#x6253;&#x5370;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> result(done <span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>) {
+    <span class="hljs-keyword">for</span> result := <span class="hljs-keyword">range</span> results {
+        fmt.Printf(<span class="hljs-string">&quot;Job id %d, input random no %d , sum of digits %d\n&quot;</span>, result.job.id, result.job.randomno, result.sumofdigits)
+    }
+    done &lt;- <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p><code>result</code>&#x51FD;&#x6570;&#x8BFB;&#x53D6;<code>results channel</code>&#x5E76;&#x6253;&#x5370;&#x4EFB;&#x52A1; ID&#xFF0C;&#x8F93;&#x5165;&#x968F;&#x673A;&#x6570;&#x548C;&#x968F;&#x673A;&#x6570;&#x7684;&#x603B;&#x548C;&#x3002;<code>result</code>&#x51FD;&#x6570;&#x5728;&#x6253;&#x5370;&#x6240;&#x6709;&#x7ED3;&#x679C;&#x540E;&#xFF0C;&#x5C06;<code>true</code>&#x5199;&#x5165;<code>done channel</code>&#x3002;</p>
+<p>&#x4E07;&#x4E8B;&#x4FF1;&#x5907;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x628A;&#x4E0A;&#x9762;&#x6240;&#x6709;&#x7684;&#x529F;&#x80FD;&#x7528;<code>main</code>&#x51FD;&#x6570;&#x4E32;&#x8054;&#x8D77;&#x6765;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">func</span> main() {
+    startTime := time.Now()
+    noOfJobs := <span class="hljs-number">100</span>
+    <span class="hljs-keyword">go</span> allocate(noOfJobs)
+    done := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>)
+    <span class="hljs-keyword">go</span> result(done)
+    noOfWorkers := <span class="hljs-number">10</span>
+    createWorkerPool(noOfWorkers)
+    &lt;-done
+    endTime := time.Now()
+    diff := endTime.Sub(startTime)
+    fmt.Println(<span class="hljs-string">&quot;total time taken &quot;</span>, diff.Seconds(), <span class="hljs-string">&quot;seconds&quot;</span>)
+}
+</code></pre>
+<p>&#x7B2C; 2 &#x884C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5C06;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#x5B58;&#x50A8;&#x8D77;&#x6765;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x4E00;&#x884C;&#xFF08;&#x7B2C; 12 &#x884C;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;<code>endTime</code>&#x548C;<code>startTime</code>&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x5DEE;&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x603B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x3002;&#x8FD9;&#x662F;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06;&#x901A;&#x8FC7;&#x6539;&#x53D8;<code>Goroutines</code>&#x7684;&#x6570;&#x91CF;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p><code>noOfJobs</code>&#x8BBE;&#x7F6E;&#x4E3A; 100&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>allocate</code>&#x4EE5;&#x5C06;&#x4EFB;&#x52A1;&#x6DFB;&#x52A0;&#x5230;<code>jobs channel</code>&#x3002;</p>
+<p>&#x7136;&#x540E;&#x521B;&#x5EFA;<code>done channel</code>&#x5E76;&#x5C06;&#x5176;&#x4F20;&#x9012;&#x7ED9;<code>results channel</code>&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x6253;&#x5370;&#x8F93;&#x51FA;&#x5E76;&#x5728;&#x6253;&#x5370;&#x5B8C;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x540E;&#x901A;&#x77E5;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>createWorkerPool</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; 10 &#x4E2A;<code>work Goroutines</code>&#x7684;&#x6C60;&#xFF0C;&#x7136;&#x540E;<code>main</code>&#x963B;&#x585E;&#x76F4;&#x5230;<code>done channel</code>&#x5199;&#x5165;<code>true</code>&#x503C;&#xFF0C;&#x6700;&#x540E;&#x6253;&#x5370;&#x6240;&#x6709;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code class="lang-golang"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;math/rand&quot;</span>
+    <span class="hljs-string">&quot;sync&quot;</span>
+    <span class="hljs-string">&quot;time&quot;</span>
+)
+
+<span class="hljs-keyword">type</span> Job <span class="hljs-keyword">struct</span> {
+    id       <span class="hljs-keyword">int</span>
+    randomno <span class="hljs-keyword">int</span>
+}
+<span class="hljs-keyword">type</span> Result <span class="hljs-keyword">struct</span> {
+    job         Job
+    sumofdigits <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">var</span> jobs = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> Job, <span class="hljs-number">10</span>)
+<span class="hljs-keyword">var</span> results = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> Result, <span class="hljs-number">10</span>)
+
+<span class="hljs-keyword">func</span> digits(number <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    sum := <span class="hljs-number">0</span>
+    no := number
+    <span class="hljs-keyword">for</span> no != <span class="hljs-number">0</span> {
+        digit := no % <span class="hljs-number">10</span>
+        sum += digit
+        no /= <span class="hljs-number">10</span>
+    }
+    time.Sleep(<span class="hljs-number">2</span> * time.Second)
+    <span class="hljs-keyword">return</span> sum
+}
+<span class="hljs-keyword">func</span> worker(wg *sync.WaitGroup) {
+    <span class="hljs-keyword">for</span> job := <span class="hljs-keyword">range</span> jobs {
+        output := Result{job, digits(job.randomno)}
+        results &lt;- output
+    }
+    wg.Done()
+}
+<span class="hljs-keyword">func</span> createWorkerPool(noOfWorkers <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">var</span> wg sync.WaitGroup
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; noOfWorkers; i++ {
+        wg.Add(<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">go</span> worker(&amp;wg)
+    }
+    wg.Wait()
+    <span class="hljs-built_in">close</span>(results)
+}
+<span class="hljs-keyword">func</span> allocate(noOfJobs <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; noOfJobs; i++ {
+        randomno := rand.Intn(<span class="hljs-number">999</span>)
+        job := Job{i, randomno}
+        jobs &lt;- job
+    }
+    <span class="hljs-built_in">close</span>(jobs)
+}
+<span class="hljs-keyword">func</span> result(done <span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>) {
+    <span class="hljs-keyword">for</span> result := <span class="hljs-keyword">range</span> results {
+        fmt.Printf(<span class="hljs-string">&quot;Job id %d, input random no %d , sum of digits %d\n&quot;</span>, result.job.id, result.job.randomno, result.sumofdigits)
+    }
+    done &lt;- <span class="hljs-literal">true</span>
+}
+<span class="hljs-keyword">func</span> main() {
+    startTime := time.Now()
+    noOfJobs := <span class="hljs-number">100</span>
+    <span class="hljs-keyword">go</span> allocate(noOfJobs)
+    done := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>)
+    <span class="hljs-keyword">go</span> result(done)
+    noOfWorkers := <span class="hljs-number">10</span>
+    createWorkerPool(noOfWorkers)
+    &lt;-done
+    endTime := time.Now()
+    diff := endTime.Sub(startTime)
+    fmt.Println(<span class="hljs-string">&quot;total time taken &quot;</span>, diff.Seconds(), <span class="hljs-string">&quot;seconds&quot;</span>)
+}
+</code></pre>
+<p><a href="https://golangbot.com/buffered-channels-worker-pools/" target="_blank">Run in playgroud</a></p>
+<p>&#x8BF7;&#x5728;&#x672C;&#x5730;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x6B64;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x4FBF;&#x8BA1;&#x7B97;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x66F4;&#x51C6;&#x786E;&#x3002;</p>
+<p>&#x7A0B;&#x5E8F;&#x5C06;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">Job id 1, input random no 636, sum of digits 15
+Job id 0, input random no 878, sum of digits 23
+Job id 9, input random no 150, sum of digits 6
+...
+total time taken  20.01081009 seconds
+</code></pre>
+<p>&#x5BF9;&#x5E94;&#x4E8E; 100 &#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5C06;&#x6253;&#x5370;&#x603B;&#x5171; 100 &#x884C;&#xFF0C;&#x5C06;&#x5728;&#x6700;&#x540E;&#x4E00;&#x884C;&#x6253;&#x5370;&#x8BE5;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x3002;&#x60A8;&#x7684;&#x8F93;&#x51FA;&#x5C06;&#x4E0E;&#x6211;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x4E3A;<code>Goroutines</code>&#x53EF;&#x4EE5;&#x6309;&#x4EFB;&#x4F55;&#x987A;&#x5E8F;&#x8FD0;&#x884C;&#xFF0C;&#x603B;&#x65F6;&#x95F4;&#x4E5F;&#x4F1A;&#x56E0;&#x786C;&#x4EF6;&#x800C;&#x5F02;&#x3002;&#x5728;&#x6211;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7A0B;&#x5E8F;&#x5B8C;&#x6210;&#x5927;&#x7EA6;&#x9700;&#x8981; 20 &#x79D2;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x5C06;<code>main</code>&#x51FD;&#x6570;&#x4E2D;&#x7684;<code>noOfWorkers</code>&#x589E;&#x52A0;&#x5230; 20&#x3002;&#x6211;&#x4EEC;&#x5C06;<code>worker</code>&#x7684;&#x6570;&#x91CF;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x500D;&#x3002;&#x7531;&#x4E8E;<code>work Goroutines</code>&#x5DF2;&#x7ECF;&#x589E;&#x52A0;&#xFF0C;&#x7A0B;&#x5E8F;&#x5B8C;&#x6210;&#x6240;&#x9700;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x5E94;&#x8BE5;&#x51CF;&#x5C11;&#x3002;&#x5728;&#x6211;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x53D8;&#x6210; 10.004364685 &#x79D2;&#xFF0C;&#x7A0B;&#x5E8F;&#x6253;&#x5370;&#xFF0C;</p>
+<pre><code class="lang-plain">...
+total time taken  10.004364685 seconds
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x5230;&#x4E86;&#x968F;&#x7740;<code>work Goroutines</code>&#x6570;&#x91CF;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6240;&#x9700;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x51CF;&#x5C11;&#x4E86;&#x3002;&#x6211;&#x628A;&#x5B83;&#x7559;&#x4F5C;&#x7EC3;&#x4E60;&#xFF0C;&#x8BA9;&#x4F60;&#x5728;&#x4E3B;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;<code>noOfJobs</code>&#x548C;<code>noOfWorkers</code>&#x7684;&#x503C;&#x6267;&#x884C;&#x5E76;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="part_22_channels.html" class="navigation navigation-prev " aria-label="Previous page: 第22节: 通道">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="part_24_select.html" class="navigation navigation-next " aria-label="Next page: 第24节: select">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第23节：缓冲通道和协程池","level":"1.10.4","depth":2,"next":{"title":"第24节: select","level":"1.10.5","depth":2,"path":"chap9/part_24_select.md","ref":"chap9/part_24_select.md","articles":[]},"previous":{"title":"第22节: 通道","level":"1.10.3","depth":2,"path":"chap9/part_22_channels.md","ref":"chap9/part_22_channels.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chap9/part_23_buffered_channels_worker_pools.md","mtime":"2019-04-03T07:01:19.920Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T09:51:51.257Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
