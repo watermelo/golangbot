@@ -26,8 +26,8 @@
     * [第16节：结构](chap7/part_16_structs.md)
     * [第17节：方法](chap7/part_17_methods.md)
 * 第八章：接口
-    * [第18节: 接口-i x](chap8/part_18_interfaces_1.md)
-    * [第19节：接口-ii x](chap8/part_19_interfaces_2.md)
+    * [第18节: 接口-i](chap8/part_18_interfaces_1.md)
+    * [第19节：接口-ii](chap8/part_19_interfaces_2.md)
 * 第九章：并发
     * [第20节: 并发介绍](chap9/part_20_introduction_to_concurrency.md)
     * [第21节：协程](chap9/part_21_goroutines.md)
@@ -40,10 +40,10 @@
     * [第27节：组合替代继承 x](chap10/part_27_inheritance.md)
     * [第28节: 多态 x](chap10/part_28_polymorphism.md)
 * 第十一章：延迟函数和错误处理
-    * [第29节: defer函数](chap11/part_29_defer.md)
+    * [第29节: defer 函数](chap11/part_29_defer.md)
     * [第30节：错误处理](chap11/part_30_error_handling.md)
     * [第31节: 自定义错误](chap11/part_31_custom_errors.md)
-    * [第32节: panic和recover](chap11/part_32_panic_and_recover.md)
+    * [第32节: panic 和 recover](chap11/part_32_panic_and_recover.md)
 * 第十二章：头等函数
     * [第33节: 头等函数 x](chap12/part_33_first_class_functions.md)
 * 第十三章：反射
