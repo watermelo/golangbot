@@ -36,7 +36,7 @@
     * [第24节: select](chap9/part_24_select.md)
     * [第25节: 互斥锁](chap9/part_25_mutex.md)
 * 第十章：面向对象编程
-    * [第26节: 结构替代类 x](chap10/part_26_structs_instead_of_classes.md)
+    * [第26节: 结构替代类](chap10/part_26_structs_instead_of_classes.md)
     * [第27节：组合替代继承 x](chap10/part_27_inheritance.md)
     * [第28节: 多态 x](chap10/part_28_polymorphism.md)
 * 第十一章：延迟函数和错误处理
@@ -47,7 +47,7 @@
 * 第十二章：头等函数
     * [第33节: 头等函数 x](chap12/part_33_first_class_functions.md)
 * 第十三章：反射
-    * [第34节: 反射 x](chap13/part_34_reflection.md)
+    * [第34节: 反射](chap13/part_34_reflection.md)
 * 第十四章：文件处理
     * [第35节: 读文件 x](chap14/part_35_read_files.md)
     * [第36节: 写文件 x](chap14/part_36_write_files.md)
