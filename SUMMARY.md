@@ -38,7 +38,7 @@
 * 第十章：面向对象编程
     * [第26节: 结构替代类](chap10/part_26_structs_instead_of_classes.md)
     * [第27节：组合替代继承](chap10/part_27_inheritance.md)
-    * [第28节: 多态 x](chap10/part_28_polymorphism.md)
+    * [第28节: 多态](chap10/part_28_polymorphism.md)
 * 第十一章：延迟函数和错误处理
     * [第29节: defer 函数](chap11/part_29_defer.md)
     * [第30节：错误处理](chap11/part_30_error_handling.md)
