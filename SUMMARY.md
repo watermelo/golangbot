@@ -45,7 +45,7 @@
     * [第31节: 自定义错误](chap11/part_31_custom_errors.md)
     * [第32节: panic 和 recover](chap11/part_32_panic_and_recover.md)
 * 第十二章：头等函数
-    * [第33节: 头等函数 x](chap12/part_33_first_class_functions.md)
+    * [第33节: 头等函数](chap12/part_33_first_class_functions.md)
 * 第十三章：反射
     * [第34节: 反射](chap13/part_34_reflection.md)
 * 第十四章：文件处理
