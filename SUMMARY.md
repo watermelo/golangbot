@@ -19,7 +19,7 @@
     * [第11节：数组和切片 x](chap5/part_11_arrays_and_slices.md)
     * [第12节：可变函数 x](chap5/part_12_variadic_functions.md)
 * 第六章：更多类型
-    * [第13节: maps x](chap6/part_13_maps.md)
+    * [第13节: 映射 maps](chap6/part_13_maps.md)
     * [第14节：字符串 x](chap6/part_14_strings.md)
 * 第七章：指针、结构、方法
     * [第15节: 指针](chap7/part_15_pointers.md)
