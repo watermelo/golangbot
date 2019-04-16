@@ -338,4 +338,4 @@ func main() {
 
 上述的代码将会抛出编译错误，`invalid operation: map1 == map2 (map can only be compared to nil).`
 
-检查两个 map 是否相等的方法是逐个比较每个元素是否一样。为此编写一个一个函数是一个不错的方法:)
+检查两个 map 是否相等的方法是逐个比较每个元素是否一样。为此编写一个函数是个不错的方法:)

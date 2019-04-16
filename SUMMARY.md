@@ -16,7 +16,7 @@
     * [第9节：循环 x](chap4/part_9_loops.md)
     * [第10节：switch 语句 x](chap4/part_10_switch.md)
 * 第五章：数组、切片、可变函数
-    * [第11节：数组和切片 x](chap5/part_11_arrays_and_slices.md)
+    * [第11节：数组和切片](chap5/part_11_arrays_and_slices.md)
     * [第12节：可变函数 x](chap5/part_12_variadic_functions.md)
 * 第六章：更多类型
     * [第13节: 映射 maps](chap6/part_13_maps.md)
