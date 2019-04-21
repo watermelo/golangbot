@@ -13,8 +13,8 @@
     * [第7节：包 x](chap3/part_7_packages.md)
 * 第四章：条件语句和循环
     * [第8节：if else 语句 x](chap4/part_8_if_else.md)
-    * [第9节：循环 x](chap4/part_9_loops.md)
-    * [第10节：switch 语句 x](chap4/part_10_switch.md)
+    * [第9节：循环](chap4/part_9_loops.md)
+    * [第10节：switch 语句](chap4/part_10_switch.md)
 * 第五章：数组、切片、变参函数
     * [第11节：数组和切片](chap5/part_11_arrays_and_slices.md)
     * [第12节：变参函数](chap5/part_12_variadic_functions.md)
