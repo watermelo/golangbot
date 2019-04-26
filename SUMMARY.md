@@ -9,10 +9,10 @@
     * [第4节：类型 x](chap2/part_4_types.md)
     * [第5节：常量 x](chap2/part_constants.md)
 * 第三章：函数和包
-    * [第6节：函数 x](chap3/part_6_functions.md)
+    * [第6节：函数](chap3/part_6_functions.md)
     * [第7节：包](chap3/part_7_packages.md)
 * 第四章：条件语句和循环
-    * [第8节：if else 语句 x](chap4/part_8_if_else.md)
+    * [第8节：if else 语句](chap4/part_8_if_else.md)
     * [第9节：循环](chap4/part_9_loops.md)
     * [第10节：switch 语句](chap4/part_10_switch.md)
 * 第五章：数组、切片、变参函数
