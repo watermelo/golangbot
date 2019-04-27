@@ -20,7 +20,7 @@
     * [第12节：变参函数](chap5/part_12_variadic_functions.md)
 * 第六章：更多类型
     * [第13节: 映射 maps](chap6/part_13_maps.md)
-    * [第14节：字符串 x](chap6/part_14_strings.md)
+    * [第14节：字符串](chap6/part_14_strings.md)
 * 第七章：指针、结构、方法
     * [第15节: 指针](chap7/part_15_pointers.md)
     * [第16节：结构](chap7/part_16_structs.md)
