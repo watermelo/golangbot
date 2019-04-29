@@ -2,12 +2,12 @@
 
 * [Introduction](README.md)
 * 第一章：介绍
-    * [第1节：介绍和安装 x](chap1/part_1_introduction_and_installation.md)
-    * [第2节：Hello, World x](chap1/part_2_hello_world.md)
+    * [第1节：介绍和安装](chap1/part_1_introduction_and_installation.md)
+    * [第2节：Hello, World](chap1/part_2_hello_world.md)
 * 第二章：变量、类型、常量
-    * [第3节：变量 x](chap2/part_3_variables.md)
-    * [第4节：类型 x](chap2/part_4_types.md)
-    * [第5节：常量 x](chap2/part_constants.md)
+    * [第3节：变量](chap2/part_3_variables.md)
+    * [第4节：类型](chap2/part_4_types.md)
+    * [第5节：常量](chap2/part_5_constants.md)
 * 第三章：函数和包
     * [第6节：函数](chap3/part_6_functions.md)
     * [第7节：包](chap3/part_7_packages.md)
